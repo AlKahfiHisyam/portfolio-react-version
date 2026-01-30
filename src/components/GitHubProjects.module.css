@@ -54,6 +54,20 @@
   color: #8338ec;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.carouselWrapper {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 .error {
   text-align: center;
   color: #ff006e;
@@ -86,10 +100,54 @@
   opacity: 0.7;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+.carousel {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide {
+  min-width: 100%;
+  padding: 0 0.5rem;
+}
+
+.navButton {
+  background: rgba(0, 212, 255, 0.15);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:global(.light-mode) .navButton {
+  background: rgba(131, 56, 236, 0.15);
+  border-color: rgba(131, 56, 236, 0.3);
+  color: #8338ec;
+}
+
+.navButton:hover {
+  background: #00d4ff;
+  color: #0a0e27;
+  transform: scale(1.1);
+}
+
+:global(.light-mode) .navButton:hover {
+  background: #8338ec;
+  color: #fff;
 }
 
 .card {
@@ -103,6 +161,7 @@
   flex-direction: column;
   text-decoration: none;
   color: inherit;
+  height: 100%;
 }
 
 :global(.light-mode) .card {
@@ -203,12 +262,176 @@
   color: #8338ec;
 }
 
-.link:hover {
-  color: #ff006e;
+.dots {
+  display: none;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+:global(.light-mode) .dot {
+  background: rgba(131, 56, 236, 0.3);
+}
+
+.dot.active {
+  background: #00d4ff;
+  transform: scale(1.3);
+}
+
+:global(.light-mode) .dot.active {
+  background: #8338ec;
+}
+
+.dot:hover {
+  background: #00d4ff;
+}
+
+:global(.light-mode) .dot:hover {
+  background: #8338ec;
+}
+
+@media (max-width: 1024px) {
+  .carouselWrapper {
+    gap: 1rem;
+  }
+
+  .navButton {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .card {
+    height: auto;
+  }
 }
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
+    display: none;
+  }
+
+  .carouselWrapper {
+    display: flex;
+  }
+
+  .dots {
+    display: flex;
+  }
+
+  .carouselWrapper {
+    gap: 0.75rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .header h3 {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 3rem 1rem;
+  }
+
+  .grid {
+    display: none;
+  }
+
+  .carouselWrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .navButton {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .header h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .meta {
+    gap: 0.5rem;
+  }
+
+  .stars,
+  .language {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer {
+    padding-top: 0.8rem;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+
+  .topic {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .link {
+    font-size: 0.85rem;
+  }
+
+  .dots {
+    gap: 0.4rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.active {
+    transform: scale(1.2);
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
   }
 }

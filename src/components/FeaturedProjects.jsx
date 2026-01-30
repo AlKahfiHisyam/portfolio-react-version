@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import styles from './FeaturedProjects.module.css';
 
 export const FeaturedProjects = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const featuredProjects = [
     {
       id: 1,
@@ -79,6 +82,8 @@ export const FeaturedProjects = () => {
       <div className={styles.container}>
         <h2 className={styles.title}>Featured Projects</h2>
         <p className={styles.subtitle}>Showcase of my best work and notable projects</p>
+        
+        {/* Desktop Grid */}
         <div className={styles.grid}>
           {featuredProjects.map((project) => (
             <div key={project.id} className={styles.card}>
@@ -106,6 +111,70 @@ export const FeaturedProjects = () => {
                 <a href={project.liveUrl} className={styles.link}>View Live →</a>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className={styles.carouselWrapper}>
+          <button 
+            className={`${styles.navButton} ${styles.prev}`}
+            onClick={() => setCurrentIndex((prev) => (prev === 0 ? featuredProjects.length - 1 : prev - 1))}
+            aria-label="Previous project"
+          >
+            ←
+          </button>
+
+          <div className={styles.carousel}>
+            <div className={styles.carouselTrack} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+              {featuredProjects.map((project) => (
+                <div key={project.id} className={styles.slide}>
+                  <div className={styles.card}>
+                    <div className={styles.imageContainer}>
+                      {project.image ? (
+                        <img 
+                          src={project.image} 
+                          alt={project.title} 
+                          className={`${styles.image} ${project.imageType === 'contain' ? styles.imageContain : ''}`}
+                        />
+                      ) : (
+                        <div className={styles.iconDisplay}>{project.icon}</div>
+                      )}
+                    </div>
+                    <div className={styles.content}>
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                      <div className={styles.tags}>
+                        {project.tags.map((tag, idx) => (
+                          <span key={idx} className={styles.tag}>{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className={styles.links}>
+                      <a href={project.liveUrl} className={styles.link}>View Live →</a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button 
+            className={`${styles.navButton} ${styles.next}`}
+            onClick={() => setCurrentIndex((prev) => (prev === featuredProjects.length - 1 ? 0 : prev + 1))}
+            aria-label="Next project"
+          >
+            →
+          </button>
+        </div>
+
+        <div className={styles.dots}>
+          {featuredProjects.map((_, idx) => (
+            <button
+              key={idx}
+              className={`${styles.dot} ${idx === currentIndex ? styles.active : ''}`}
+              onClick={() => setCurrentIndex(idx)}
+              aria-label={`Go to project ${idx + 1}`}
+            />
           ))}
         </div>
       </div>

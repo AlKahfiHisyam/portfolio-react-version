@@ -57,6 +57,46 @@
   position: relative;
 }
 
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #00d4ff;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+:global(.light-mode) .hamburger span {
+  background: #8338ec;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
 :global(.light-mode) .menu a {
   color: #1a1a1a;
 }
@@ -104,11 +144,91 @@
 
 @media (max-width: 768px) {
   .menu {
-    gap: 1rem;
-    font-size: 0.9rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+  }
+
+  .menu.active {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu li {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .menu li:last-child {
+    border-bottom: none;
+  }
+
+  .menu a {
+    font-size: 0.85rem;
+    display: block;
   }
 
   .container {
     padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .themeToggle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  :global(.light-mode) .menu {
+    background: rgba(248, 249, 250, 0.95);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .menu {
+    gap: 0;
+    font-size: 0.75rem;
+  }
+
+  .menu li {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .menu a {
+    font-size: 0.7rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .themeToggle {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
   }
 }

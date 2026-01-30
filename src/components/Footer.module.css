@@ -40,3 +40,36 @@
   position: relative;
   z-index: 1;
 }
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.2rem;
+  }
+
+  .container {
+    padding: 0 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+  }
+}

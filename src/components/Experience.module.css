@@ -55,11 +55,13 @@
   width: 2px;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 212, 255, 0.5), transparent);
+  top: 0;
 }
 
 @media (max-width: 768px) {
   .timeline::before {
     left: 20px;
+    height: calc(100% + 2rem);
   }
 }
 
@@ -251,5 +253,80 @@
 
   .header h3 {
     font-size: 1.1rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+  }
+
+  .position {
+    font-size: 1rem;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+  }
+
+  .achievements li {
+    font-size: 0.9rem;
+    margin: 0.6rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 2rem 0.75rem;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .dot {
+    display: none;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header h3 {
+    font-size: 0.95rem;
+  }
+
+  .badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .position {
+    font-size: 0.9rem;
+  }
+
+  .meta {
+    font-size: 0.75rem;
+  }
+
+  .achievements li {
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    margin: 0.4rem 0;
   }
 }

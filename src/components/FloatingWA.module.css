@@ -121,6 +121,16 @@
   border-left-color: rgba(248, 249, 250, 0.95);
 }
 
+@media (max-width: 1024px) {
+  .floatingWA {
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    right: 25px;
+    font-size: 1.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   .floatingWA {
     width: 50px;
@@ -153,5 +163,23 @@
 
   :global(.light-mode) .tooltip::after {
     border-top-color: rgba(248, 249, 250, 0.95);
+  }
+}
+
+@media (max-width: 480px) {
+  .floatingWA {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+  }
+
+  .tooltip {
+    padding: 8px 12px;
+  }
+
+  .tooltip p {
+    font-size: 0.75rem;
   }
 }

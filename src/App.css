@@ -144,6 +144,24 @@ body.light-mode {
   body {
     font-size: 14px;
   }
+
+  html {
+    scroll-padding-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  html {
+    scroll-padding-top: 60px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
 }
 
 /* Utilities */

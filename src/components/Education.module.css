@@ -256,11 +256,115 @@
     padding: 3rem 1rem;
   }
 
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
   .card {
     padding: 1.5rem;
   }
 
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .degree {
+    font-size: 1rem;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+  }
+
+  .stats {
+    gap: 0.8rem;
+  }
+
+  .label {
+    font-size: 0.7rem;
+  }
+
+  .value {
+    font-size: 1rem;
+  }
+
   .certificationsSection {
     padding: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .certTags {
+    gap: 0.8rem;
+  }
+
+  .tag {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education {
+    padding: 2rem 0.75rem;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .degree {
+    font-size: 0.95rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .stats {
+    gap: 0.6rem;
+  }
+
+  .label {
+    font-size: 0.65rem;
+  }
+
+  .value {
+    font-size: 0.95rem;
+  }
+
+  .certificationsSection {
+    padding: 1.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .certTags {
+    gap: 0.6rem;
+  }
+
+  .tag {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .tagIcon {
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.7rem;
   }
 }
