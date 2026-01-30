@@ -10,7 +10,7 @@ export const FeaturedProjects = () => {
       title: 'PISMART',
       description: 'A comprehensive Human Resources management system for PT Pupuk Indonesia, digitizing all HR processes including employee data, attendance, leave management, and payroll.',
       tags: ['Laravel', 'Golang', 'Next.js', 'PostgreSQL', 'Docker', 'JQuery', 'Bootstrap'],
-      image: 'https://pismart.pupuk-indonesia.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flumen-oauth-storage%2FBanner%2Fpismart-banner-v2.webp&w=1920&q=75',
+      image: '/assets/projects/pismart-banner.webp',
       liveUrl: 'https://pismart.pupuk-indonesia.com/',
       githubUrl: '#'
     },
@@ -19,42 +19,52 @@ export const FeaturedProjects = () => {
       title: 'Build With Angga',
       description: 'A comprehensive online learning platform offering design and web development courses. Created a frontend interface for browsing courses, managing student progress, and accessing course materials with a modern, responsive design.',
       tags: ['Laravel', 'Bootstrap', 'MySQL'],
-      image: 'https://buildwithangga.com/themes/front/images/logo_bwa_new.svg',
+      image: '/assets/projects/build-with-angga.svg',
       liveUrl: 'https://buildwithangga.com/',
       githubUrl: '#',
       imageType: 'contain'
     },
     {
       id: 3,
+      title: 'Private MD Labs',
+      description: 'A patient-focused platform enabling users to easily book laboratory appointment services at medical labs across the United States. Features appointment scheduling, test result management, and seamless integration with lab networks.',
+      tags: ['Laravel', 'Vue', 'PostgreSQL'],
+      image: '/assets/projects/private-md-labs.svg',
+      liveUrl: 'https://www.privatemdlabs.com/',
+      githubUrl: '#',
+      imageType: 'contain'
+    },
+    {
+      id: 4,
       title: 'Agendakota',
       description: 'An integrated event management platform that helps users find and book vendors, venues, and manage events seamlessly.',
       tags: ['Laravel', 'Bootstrap', 'MySQL'],
-      image: 'https://agendakota.id/images/FrontCover1.png',
+      image: '/assets/projects/agendakota.png',
       liveUrl: 'https://agendakota.id/',
       githubUrl: '#'
     },
     {
-      id: 4,
+      id: 5,
       title: 'Tracer Study UNAIR',
       description: 'A tracer study platform for Airlangga University to track and analyze graduate employment outcomes and career development.',
       tags: ['Laravel', 'Bootstrap', 'MySQL'],
-      image: 'https://tracerstudy.unair.ac.id/assets/global/images/tracer-white.png',
+      image: '/assets/projects/tracer-study.png',
       liveUrl: 'https://tracerstudy.unair.ac.id/',
       githubUrl: '#',
       imageType: 'contain'
     },
     {
-      id: 5,
+      id: 6,
       title: 'JLOG',
       description: 'JLOG is a company specializing in logistics and supply chain solutions, providing efficient shipment management, real-time tracking, and delivery optimization services for businesses.',
       tags: ['WordPress', 'Elementor', 'MySQL'],
-      image: 'https://jlog.id/wp-content/uploads/2025/08/JLOG-LOGO_SECONDARY_GREEN-e1755612487791.png',
+      image: '/assets/projects/jlog.png',
       liveUrl: 'https://jlog.id/',
       githubUrl: '#',
       imageType: 'contain'
     },
     {
-      id: 6,
+      id: 7,
       title: 'ERENT - Electronic Rental',
       description: 'A comprehensive electronic rental application platform for managing equipment rentals. Built with a modern tech stack featuring both web and mobile interfaces. Users can browse, rent, and track rental items with real-time availability updates.',
       tags: ['React/JS', 'Prisma', 'Tailwind CSS', 'Web App', 'Mobile App'],
@@ -64,7 +74,7 @@ export const FeaturedProjects = () => {
       isDeployed: false
     },
     {
-      id: 7,
+      id: 8,
       title: 'Wonder Tamarind',
       description: 'A company profile website for Wonder Tamarind, an international tamarind export company specializing in exporting premium tamarind products to markets worldwide.',
       tags: ['WordPress', 'Elementor', 'MySQL'],
