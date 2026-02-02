@@ -93,6 +93,16 @@ export const FeaturedProjects = () => {
       liveUrl: '#',
       githubUrl: '#',
       isDeployed: false
+    },
+    {
+      id: 10,
+      title: 'Kost Cemara Gresik',
+      description: 'A professional profile website for Kost Cemara Gresik, showcasing available rooms, facilities, and information about the boarding house.',
+      tags: ['React'],
+      image: 'https://kostcemaragresik.netlify.app/photo/icon-removebg-preview.png',
+      liveUrl: 'https://kostcemaragresik.netlify.app/',
+      githubUrl: '#',
+      imageType: 'contain'
     }
   ];
 
