@@ -75,6 +75,16 @@ export const FeaturedProjects = () => {
     },
     {
       id: 8,
+      title: 'Psycho AI',
+      description: 'An AI-powered personality assessment platform that helps users understand their psychological profile through comprehensive personality testing. Features personalized insights and detailed analysis.',
+      tags: ['React', 'Node.js', 'AI/ML', 'MongoDB'],
+      image: '/assets/projects/psycho-ai.svg',
+      liveUrl: 'https://psycho-ai.onrender.com/',
+      githubUrl: '#',
+      imageType: 'contain'
+    },
+    {
+      id: 9,
       title: 'Wonder Tamarind',
       description: 'A company profile website for Wonder Tamarind, an international tamarind export company specializing in exporting premium tamarind products to markets worldwide.',
       tags: ['WordPress', 'Elementor', 'MySQL'],
