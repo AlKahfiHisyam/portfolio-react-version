@@ -38,7 +38,7 @@ export const FeaturedProjects = () => {
       id: 4,
       title: 'Tergar Indonesia',
       description: 'A WordPress-based profile website for Yayasan Tergar Indonesia, built as a responsive foundation site with organizational info, programs, and contact details.',
-      tags: ['React', 'Next.js', 'Tailwind CSS'],
+      tags: ['WordPress', 'Elementor', 'MySQL'],
       image: 'https://tergar.or.id/wp-content/uploads/2026/03/Tergar-Logo-Indonesia-color-1.png',
       liveUrl: 'https://tergar.co.id/',
       githubUrl: '#',
