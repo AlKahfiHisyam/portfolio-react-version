@@ -36,6 +36,16 @@ export const FeaturedProjects = () => {
     },
     {
       id: 4,
+      title: 'Tergar Indonesia',
+      description: 'A WordPress-based profile website for Yayasan Tergar Indonesia, built as a responsive foundation site with organizational info, programs, and contact details.',
+      tags: ['React', 'Next.js', 'Tailwind CSS'],
+      image: 'https://tergar.or.id/wp-content/uploads/2026/03/Tergar-Logo-Indonesia-color-1.png',
+      liveUrl: 'https://tergar.co.id/',
+      githubUrl: '#',
+      imageType: 'contain'
+    },
+    {
+      id: 5,
       title: 'Agendakota',
       description: 'An integrated event management platform that helps users find and book vendors, venues, and manage events seamlessly.',
       tags: ['Laravel', 'Bootstrap', 'MySQL'],
@@ -44,7 +54,7 @@ export const FeaturedProjects = () => {
       githubUrl: '#'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Tracer Study UNAIR',
       description: 'A tracer study platform for Airlangga University to track and analyze graduate employment outcomes and career development.',
       tags: ['Laravel', 'Bootstrap', 'MySQL'],
@@ -54,7 +64,7 @@ export const FeaturedProjects = () => {
       imageType: 'contain'
     },
     {
-      id: 6,
+      id: 7,
       title: 'JLOG',
       description: 'JLOG is a company specializing in logistics and supply chain solutions, providing efficient shipment management, real-time tracking, and delivery optimization services for businesses.',
       tags: ['WordPress', 'Elementor', 'MySQL'],
@@ -64,7 +74,7 @@ export const FeaturedProjects = () => {
       imageType: 'contain'
     },
     {
-      id: 7,
+      id: 8,
       title: 'ERENT - Electronic Rental',
       description: 'A comprehensive electronic rental application platform for managing equipment rentals. Built with a modern tech stack featuring both web and mobile interfaces. Users can browse, rent, and track rental items with real-time availability updates.',
       tags: ['React/JS', 'Prisma', 'Tailwind CSS', 'Web App', 'Mobile App'],
@@ -74,7 +84,7 @@ export const FeaturedProjects = () => {
       isDeployed: false
     },
     {
-      id: 8,
+      id: 9,
       title: 'Psycho AI',
       description: 'An AI-powered personality assessment platform that helps users understand their psychological profile through comprehensive personality testing. Features personalized insights and detailed analysis.',
       tags: ['React', 'Node.js', 'AI/ML', 'MongoDB'],
@@ -84,7 +94,7 @@ export const FeaturedProjects = () => {
       imageType: 'contain'
     },
     {
-      id: 9,
+      id: 10,
       title: 'Wonder Tamarind',
       description: 'A company profile website for Wonder Tamarind, an international tamarind export company specializing in exporting premium tamarind products to markets worldwide.',
       tags: ['WordPress', 'Elementor', 'MySQL'],
@@ -95,7 +105,7 @@ export const FeaturedProjects = () => {
       isDeployed: false
     },
     {
-      id: 10,
+      id: 11,
       title: 'Kost Cemara Gresik',
       description: 'A professional profile website for Kost Cemara Gresik, showcasing available rooms, facilities, and information about the boarding house.',
       tags: ['React'],
