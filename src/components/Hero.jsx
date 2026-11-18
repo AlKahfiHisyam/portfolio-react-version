@@ -1,8 +1,9 @@
-import { Download, MessageCircle } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { clients, profile, ui, whatsappLink } from '../data/portfolio';
 import { HeroShowcase } from './HeroShowcase';
 import { useLocalTime } from './useLocalTime';
+import { WhatsAppIcon } from './BrandIcons';
 import styles from './Hero.module.css';
 
 export const Hero = () => {
@@ -27,7 +28,7 @@ export const Hero = () => {
               rel="noopener noreferrer"
               className="btn btn-primary btn-lg"
             >
-              <MessageCircle aria-hidden="true" />
+              <WhatsAppIcon />
               {t(ui.hero.primary)}
             </a>
             {profile.cv && (

@@ -3,17 +3,13 @@
   right: max(16px, env(safe-area-inset-right));
   bottom: max(16px, env(safe-area-inset-bottom));
   z-index: 40;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 56px;
-  height: 56px;
-  padding: 0 16px;
-  justify-content: center;
-  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   background: var(--wa);
   color: #ffffff;
-  font-weight: 600;
   text-decoration: none;
   box-shadow: 0 10px 30px -8px rgb(22 124 70 / 0.6), 0 2px 6px rgb(0 0 0 / 0.2);
   transition: background-color 0.2s, transform 0.2s var(--ease-out);
@@ -26,14 +22,8 @@
 
 .fab svg {
   position: relative;
-  width: 24px;
-  height: 24px;
-  flex: none;
-}
-
-.label {
-  position: relative;
-  display: none;
+  width: 30px;
+  height: 30px;
 }
 
 /* A soft ring pulses out every few seconds to catch the eye without nagging. */
@@ -51,15 +41,6 @@
   }
 }
 
-@media (min-width: 640px) {
-  .fab {
-    padding: 0 22px 0 18px;
-  }
-
-  .label {
-    display: inline;
-  }
-}
 
 @keyframes ping {
   0% {

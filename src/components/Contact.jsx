@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Mail, MessageCircle } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { profile, ui, whatsappLink } from '../data/portfolio';
-import { GitHubIcon, LinkedInIcon } from './BrandIcons';
+import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from './BrandIcons';
 import styles from './Contact.module.css';
 
 const emptyForm = { name: '', email: '', message: '' };
@@ -51,7 +51,7 @@ export const Contact = () => {
               rel="noopener noreferrer"
               className="btn btn-wa btn-lg"
             >
-              <MessageCircle aria-hidden="true" />
+              <WhatsAppIcon />
               {t(ui.hero.whatsapp)}
             </a>
             <a href={`mailto:${profile.email}`} className="btn btn-secondary btn-lg">

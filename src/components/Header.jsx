@@ -1,7 +1,8 @@
-import { MessageCircle, Moon, Sun } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../i18n/LanguageContext';
 import { profile, ui, whatsappLink } from '../data/portfolio';
+import { WhatsAppIcon } from './BrandIcons';
 import styles from './Header.module.css';
 
 const sections = ['work', 'services', 'experience', 'about'];
@@ -52,7 +53,7 @@ export const Header = () => {
             rel="noopener noreferrer"
             className={`btn btn-primary ${styles.cta}`}
           >
-            <MessageCircle aria-hidden="true" />
+            <WhatsAppIcon />
             {t(ui.nav.cta)}
           </a>
         </div>

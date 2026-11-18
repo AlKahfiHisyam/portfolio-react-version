@@ -1,7 +1,8 @@
-import { Check, Download, Mail, MessageCircle } from 'lucide-react';
+import { Check, Download, Mail } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { profile, ui, whatsappLink } from '../data/portfolio';
 import { Reveal } from './Reveal';
+import { WhatsAppIcon } from './BrandIcons';
 import styles from './Paths.module.css';
 
 export const Paths = () => {
@@ -31,7 +32,7 @@ export const Paths = () => {
                 rel="noopener noreferrer"
                 className="btn btn-wa"
               >
-                <MessageCircle aria-hidden="true" />
+                <WhatsAppIcon />
                 {t(build.cta)}
               </a>
               <a href="#contact" className="btn btn-secondary">{t(build.secondary)}</a>

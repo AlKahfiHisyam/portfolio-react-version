@@ -1,14 +1,14 @@
-import { ArrowUp, Mail, MessageCircle } from 'lucide-react';
+import { ArrowUp, Mail } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { profile, ui, whatsappLink } from '../data/portfolio';
-import { GitHubIcon, LinkedInIcon } from './BrandIcons';
+import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from './BrandIcons';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
   const { t } = useLanguage();
 
   const socials = [
-    { label: 'WhatsApp', href: whatsappLink(t(ui.hero.whatsappText)), Icon: MessageCircle, external: true },
+    { label: 'WhatsApp', href: whatsappLink(t(ui.hero.whatsappText)), Icon: WhatsAppIcon, external: true },
     { label: 'Email', href: `mailto:${profile.email}`, Icon: Mail },
     { label: 'LinkedIn', href: profile.linkedin, Icon: LinkedInIcon, external: true },
     { label: 'GitHub', href: `https://github.com/${profile.github}`, Icon: GitHubIcon, external: true },
@@ -26,7 +26,7 @@ export const Footer = () => {
               rel="noopener noreferrer"
               className="btn btn-wa btn-lg"
             >
-              <MessageCircle aria-hidden="true" />
+              <WhatsAppIcon />
               {t(ui.hero.whatsapp)}
             </a>
           </div>
