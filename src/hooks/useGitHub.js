@@ -1,68 +1,26 @@
 import { useState, useEffect } from 'react';
 
-export const useGitHubRepos = (username) => {
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(true);
+// GitHub has no public contributions endpoint, so this reads a community mirror of the profile calendar.
+export const useGitHubContributions = (username) => {
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!username) return;
+    const controller = new AbortController();
 
-    const fetchRepos = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
-        if (!response.ok) throw new Error('Failed to fetch repos');
-        const data = await response.json();
-        
-        // Filter repos by stars and activity
-        const filtered = data
-          .filter(repo => !repo.fork)
-          .sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))
-          .slice(0, 20);
-        
-        setRepos(filtered);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setRepos([]);
-      } finally {
-        setLoading(false);
-      }
-    };
+    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error('Failed to fetch contributions');
+        return response.json();
+      })
+      .then((json) => setData({ total: json.total?.lastYear ?? 0, days: json.contributions ?? [] }))
+      .catch((err) => {
+        if (err.name !== 'AbortError') setError(err.message);
+      });
 
-    fetchRepos();
+    return () => controller.abort();
   }, [username]);
 
-  return { repos, loading, error };
-};
-
-export const useGitHubUser = (username) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    if (!username) return;
-
-    const fetchUser = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(`https://api.github.com/users/${username}`);
-        if (!response.ok) throw new Error('Failed to fetch user');
-        const data = await response.json();
-        setUser(data);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUser();
-  }, [username]);
-
-  return { user, loading, error };
+  return { data, error };
 };

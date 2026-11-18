@@ -1,25 +1,28 @@
-import { Navbar, Hero, About, Skills, Experience, FeaturedProjects, GitHubProjects, Education, Contact, Footer, LoadingRocket, FloatingWA } from './components';
+import { Header, Hero, Proof, Paths, Work, Process, Experience, About, Testimonials, Contact, Footer, FloatingWhatsApp } from './components';
+import { useLanguage } from './i18n/LanguageContext';
 import './App.css';
 
 function App() {
+  const { lang } = useLanguage();
+
   return (
-    <div className="app">
-      <LoadingRocket />
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <FeaturedProjects />
-      <GitHubProjects username="AlKahfiHisyam" />
-      <Education />
-      <Contact />
+    <>
+      <a href="#main" className="skip-link">{lang === 'id' ? 'Langsung ke konten' : 'Skip to content'}</a>
+      <Header />
+      <main id="main">
+        <Hero />
+        <Proof />
+        <Work />
+        <Paths />
+        <Process />
+        <Experience />
+        <About />
+        <Testimonials />
+        <Contact />
+      </main>
       <Footer />
-      <FloatingWA />
-      <div className="particles">
-        {[...Array(5)].map((_, i) => <div key={i} className="particle"></div>)}
-      </div>
-    </div>
+      <FloatingWhatsApp />
+    </>
   );
 }
 

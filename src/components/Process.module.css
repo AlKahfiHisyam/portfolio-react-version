@@ -1,0 +1,51 @@
+.steps {
+  list-style: none;
+  display: grid;
+  gap: 32px;
+  counter-reset: step;
+}
+
+.steps li {
+  position: relative;
+  padding-top: 20px;
+  border-top: 2px solid var(--line);
+}
+
+.num {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.steps h3 {
+  margin-top: 16px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.steps p {
+  margin-top: 6px;
+  color: var(--ink-2);
+  font-size: 16px;
+}
+
+@media (min-width: 720px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+}

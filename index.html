@@ -1,37 +1,58 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <!-- Favicon & App Icons -->
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="apple-touch-icon" href="/logo.svg" />
-    <meta name="theme-color" content="#0a0e27" />
+    <meta name="theme-color" content="#0c0e13" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Apply the saved or system theme before first paint -->
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('theme-choice'); } catch (e) {}
+        // Dark is the default look; a visitor's own choice from the toggle wins.
+        if (t !== 'dark' && t !== 'light') t = 'dark';
+        document.documentElement.dataset.theme = t;
+        document.documentElement.classList.add('js');
+        try { var l = localStorage.getItem('lang'); if (l === 'id' || l === 'en') document.documentElement.lang = l; } catch (e) {}
+      })();
+    </script>
     
     <!-- Viewport & Device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
     <!-- Primary Meta Tags -->
-    <title>Al-Kahfi Fajrhul Hisyam - Full Stack Developer</title>
-    <meta name="description" content="Experienced Full Stack Developer and Web Designer showcasing professional projects, skills, and experience in web development. Portfolio includes PISMART HR System, Agendakota Event Platform, and more." />
-    <meta name="keywords" content="full stack developer, web developer, web designer, portfolio, Laravel, React, Node.js, Next.js, Indonesia" />
+    <title>Al-Kahfi Hisyam | Full Stack & AI Application Engineer</title>
+    <meta name="description" content="Full stack and AI application engineer. Built PI Smart, the HR super app for 30,000+ employees at Pupuk Indonesia, and leads digitalization at JLOG. Available for projects and roles." />
+    <meta name="keywords" content="full stack developer, AI application engineer, LLM integration, Laravel, Golang, Next.js, React, freelance developer Indonesia, Gresik" />
     <meta name="author" content="Al-Kahfi Fajrhul Hisyam" />
     
     <!-- Open Graph Meta Tags (Social Media) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alkahfi.dev/" />
-    <meta property="og:title" content="Al-Kahfi Fajrhul Hisyam - Full Stack Developer" />
-    <meta property="og:description" content="Full Stack Developer. View my professional portfolio and featured projects." />
-    <meta property="og:image" content="/logo.svg" />
+    <meta property="og:title" content="Al-Kahfi Hisyam | Full Stack & AI Application Engineer" />
+    <meta property="og:description" content="Full stack and AI application engineer. Built PI Smart, the HR super app for 30,000+ employees at Pupuk Indonesia, and leads digitalization at JLOG. Available for projects and roles." />
+    <meta property="og:image" content="https://alkahfi.dev/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Al-Kahfi Hisyam, full stack developer" />
     <meta property="og:site_name" content="Al-Kahfi Portfolio" />
-    <meta property="og:locale" content="id_ID" />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Card Meta Tags -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Al-Kahfi Fajrhul Hisyam - Full Stack Developer" />
-    <meta property="twitter:description" content="Experienced Full Stack Developer showcasing professional projects and expertise." />
-    <meta property="twitter:image" content="/logo.svg" />
+    <meta property="twitter:title" content="Al-Kahfi Hisyam | Full Stack & AI Application Engineer" />
+    <meta property="twitter:description" content="Full stack and AI application engineer. Built PI Smart, the HR super app for 30,000+ employees at Pupuk Indonesia, and leads digitalization at JLOG. Available for projects and roles." />
+    <meta property="twitter:image" content="https://alkahfi.dev/og.png" />
     
     <!-- LinkedIn Canonical -->
     <link rel="canonical" href="https://alkahfi.dev/" />
@@ -39,7 +60,7 @@
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
-    <meta name="language" content="Indonesian" />
+    <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     <meta name="distribution" content="global" />
     
@@ -50,9 +71,9 @@
       "@type": "Person",
       "name": "Al-Kahfi Fajrhul Hisyam",
       "url": "https://alkahfi.dev/",
-      "image": "/logo.svg",
-      "description": "Full Stack Developer & Web Designer",
-      "jobTitle": "Full Stack Developer",
+      "image": "https://alkahfi.dev/og.png",
+      "description": "Full Stack & AI Application Engineer",
+      "jobTitle": "Full Stack & AI Application Engineer",
       "email": "career.alkahfi@gmail.com",
       "telephone": "+62858-5478-9879",
       "sameAs": [

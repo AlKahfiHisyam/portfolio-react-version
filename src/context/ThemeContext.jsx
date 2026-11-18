@@ -2,27 +2,32 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
+// index.html sets data-theme before React loads, so the first paint already matches.
+const getInitialTheme = () => {
+  const current = document.documentElement.dataset.theme;
+  return current === 'dark' || current === 'light' ? current : 'dark';
+};
+
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(() => {
-    const saved = localStorage.getItem('theme');
-    return saved ? JSON.parse(saved) : true;
-  });
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(isDark));
-    if (isDark) {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-    }
-  }, [isDark]);
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
-  const toggleTheme = () => setIsDark(!isDark);
+  // Only an explicit toggle is remembered, so the dark default reaches everyone who never chose.
+  const toggleTheme = () => setTheme((t) => {
+    const next = t === 'dark' ? 'light' : 'dark';
+    try {
+      localStorage.setItem('theme-choice', next);
+    } catch {
+      // Storage can be blocked (private mode); the theme still applies for this visit.
+    }
+    return next;
+  });
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+    <ThemeContext.Provider value={{ isDark: theme === 'dark', toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

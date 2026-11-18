@@ -1,0 +1,204 @@
+.showcase {
+  position: relative;
+  padding: 18px 18px 0 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .showcase {
+    animation: rise 1s 0.1s var(--ease-out) both;
+  }
+}
+
+/* Two offset sheets behind the window give the stack some depth. */
+.back1,
+.back2 {
+  position: absolute;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.back1 {
+  inset: 9px 9px 52px 9px;
+  transform: rotate(2deg);
+  opacity: 0.9;
+}
+
+.back2 {
+  inset: 0 0 60px 18px;
+  transform: rotate(4.5deg);
+  opacity: 0.6;
+}
+
+.window {
+  position: relative;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar > span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.url {
+  flex: 1;
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 3px 12px;
+  border-radius: 7px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--ink-3);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.viewport {
+  position: relative;
+  aspect-ratio: 16 / 10.5;
+  overflow: hidden;
+  background: #fff;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-out), transform 0.9s var(--ease-out);
+  transform: scale(1.03);
+}
+
+.slide.active {
+  opacity: 1;
+  transform: none;
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  animation: progress var(--ms) linear both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* While a slide is on screen the page drifts down a little, like someone scrolling it. */
+  .slide.active {
+    animation: drift var(--ms) linear both;
+  }
+
+  .url,
+  .name {
+    animation: fadeIn 0.5s var(--ease-out);
+  }
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  min-height: 44px;
+}
+
+.name {
+  font-size: 14px;
+  color: var(--ink-3);
+  min-width: 0;
+}
+
+.name strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.dots {
+  display: flex;
+  flex: none;
+}
+
+.dots button {
+  position: relative;
+  width: 24px;
+  height: 44px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.dots button::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--field);
+  opacity: 0.45;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out), opacity 0.3s;
+}
+
+.dots button[aria-pressed='true']::after {
+  width: 18px;
+  opacity: 1;
+  background: var(--accent);
+}
+
+@keyframes drift {
+  from {
+    object-position: 50% 0%;
+  }
+  to {
+    object-position: 50% 14%;
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}

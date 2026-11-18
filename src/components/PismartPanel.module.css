@@ -1,0 +1,416 @@
+.wrap,
+.shotWrap {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrap,
+  .shotWrap {
+    animation: rise 1s 0.1s var(--ease-out) both;
+  }
+}
+
+.window {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  font-size: 14.5px;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-subtle);
+}
+
+.bar > span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.url {
+  margin-left: 12px;
+  padding: 3px 12px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 11.5em 1fr;
+  min-height: 340px;
+}
+
+.side {
+  padding: 18px 12px;
+  border-right: 1px solid var(--line);
+  background: var(--bg-subtle);
+}
+
+.product {
+  padding: 0 8px 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.product small {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.side ul {
+  list-style: none;
+  display: grid;
+  gap: 2px;
+}
+
+.side li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 8px;
+  border-radius: 7px;
+  color: var(--ink-2);
+}
+
+.side li svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.side li.active {
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.more {
+  margin-top: 14px;
+  padding: 0 8px;
+  font-size: 12px;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+.main {
+  min-width: 0;
+  padding: 18px;
+}
+
+.heading {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.rows {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.rows li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  transition: border-color 0.5s, box-shadow 0.5s;
+}
+
+.rows li.live {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.type {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+}
+
+.type svg {
+  width: 16px;
+  height: 16px;
+}
+
+.lines {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+}
+
+.title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detail {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.chip svg {
+  width: 13px;
+  height: 13px;
+}
+
+.approved {
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+
+.pending {
+  background: var(--warn-soft);
+  color: var(--warn);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th,
+.table td {
+  padding: 9px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.table thead th {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+
+.table th:first-child {
+  text-align: left;
+}
+
+.table tbody th {
+  font-weight: 500;
+}
+
+.table td {
+  color: var(--ink-2);
+}
+
+.table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+/* Inside a project card the panel fills the media slot edge to edge. */
+.inCard {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: clamp(16px, 3vw, 32px);
+}
+
+.inCard .window {
+  box-shadow: var(--shadow-md);
+}
+
+.inCard .caption {
+  margin-top: 10px;
+}
+
+.caption {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.shot {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 520px) {
+  .main {
+    padding: 14px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 4px;
+  }
+
+  /* Three columns fit a phone; "Late" returns on wider screens. */
+  .table tr > :nth-child(4) {
+    display: none;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+  }
+
+  .side {
+    display: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+.window {
+  position: relative;
+}
+
+/* View change: the new module slides in like a page transition. */
+@media (prefers-reduced-motion: no-preference) {
+  .main {
+    animation: viewIn 0.5s var(--ease-out);
+  }
+
+  .table tbody tr {
+    animation: rowIn 0.45s var(--ease-out) both;
+    animation-delay: calc(var(--i) * 70ms + 120ms);
+  }
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  animation: progress var(--ms) linear both;
+  opacity: 0.7;
+}
+
+.steps {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  transition: opacity 0.3s;
+}
+
+.steps li.waiting {
+  opacity: 0.55;
+}
+
+.stepIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--ok);
+}
+
+.done .stepIcon {
+  background: var(--ok-soft);
+  border-color: transparent;
+}
+
+.running .stepIcon {
+  color: var(--warn);
+}
+
+.stepIcon svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .running .stepIcon svg {
+    animation: spin 1s linear infinite;
+  }
+}
+
+.stepText {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+}
+
+@keyframes viewIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

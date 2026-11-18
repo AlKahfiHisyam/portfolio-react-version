@@ -1,75 +1,133 @@
 .footer {
   position: relative;
-  text-align: center;
-  padding: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  opacity: 0.7;
-  background: rgba(10, 14, 39, 0.3);
+  overflow: hidden;
+  background: #070910;
+  color: #e8ecf3;
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-.stars {
+.footer::before {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent), radial-gradient(2px 2px at 60px 70px, rgba(255, 255, 255, 0.6), transparent), radial-gradient(1px 1px at 50px 50px, rgba(255, 255, 255, 0.7), transparent), radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.5), transparent), radial-gradient(2px 2px at 90px 10px, rgba(255, 255, 255, 0.6), transparent);
-  background-size: 200px 200px;
-  animation: twinkle 5s ease-in-out infinite;
-  z-index: 0;
+  inset: -40% -10% auto;
+  height: 520px;
+  background:
+    radial-gradient(40% 60% at 25% 50%, rgb(37 99 235 / 0.35), transparent 70%),
+    radial-gradient(35% 55% at 75% 40%, rgb(20 184 166 / 0.22), transparent 70%);
+  filter: blur(10px);
   pointer-events: none;
 }
 
-:global(.light-mode) .footer {
-  border-top-color: rgba(0, 0, 0, 0.1);
+@media (prefers-reduced-motion: no-preference) {
+  .footer::before {
+    animation: sway 16s ease-in-out infinite alternate;
+  }
 }
 
-:global(.light-mode) .stars {
-  background-image: radial-gradient(2px 2px at 20px 30px, rgba(0, 0, 0, 0.15), transparent), radial-gradient(2px 2px at 60px 70px, rgba(0, 0, 0, 0.1), transparent), radial-gradient(1px 1px at 50px 50px, rgba(0, 0, 0, 0.12), transparent), radial-gradient(1px 1px at 130px 80px, rgba(0, 0, 0, 0.08), transparent), radial-gradient(2px 2px at 90px 10px, rgba(0, 0, 0, 0.1), transparent);
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.footer .inner {
   position: relative;
-  z-index: 1;
+  padding-top: clamp(56px, 8vw, 88px);
 }
 
-@media (max-width: 1024px) {
-  .footer {
-    padding: 1.5rem;
-  }
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+}
 
-  .container {
-    padding: 0 1.5rem;
-    font-size: 0.9rem;
+.line {
+  max-width: 16em;
+  margin-bottom: 24px;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  background: rgb(255 255 255 / 0.04);
+  color: #e8ecf3;
+  transition: background-color 0.25s, border-color 0.25s, transform 0.25s var(--ease-out);
+}
+
+.socials a:hover {
+  background: #e8ecf3;
+  color: #070910;
+  border-color: #e8ecf3;
+  transform: translateY(-3px);
+}
+
+.socials svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* A large faded name anchors the end of the page. */
+.wordmark {
+  margin-top: clamp(40px, 6vw, 72px);
+  font-size: clamp(64px, 17vw, 220px);
+  line-height: 0.85;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+  color: rgb(255 255 255 / 0.07);
+  user-select: none;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 20px 0 96px;
+  border-top: 1px solid rgb(255 255 255 / 0.1);
+  font-size: 14px;
+  color: rgb(232 236 243 / 0.66);
+}
+
+.toTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  color: #e8ecf3;
+  text-decoration: none;
+}
+
+.toTop svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.toTop:hover svg {
+  transform: translateY(-3px);
+}
+
+@media (min-width: 640px) {
+  .bottom {
+    padding-bottom: 28px;
   }
 }
 
-@media (max-width: 768px) {
-  .footer {
-    padding: 1.2rem;
-  }
-
-  .container {
-    padding: 0 1.2rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer {
-    padding: 1rem;
-  }
-
-  .container {
-    padding: 0 0.75rem;
-    font-size: 0.75rem;
+@keyframes sway {
+  to {
+    transform: translateX(6%) scale(1.08);
   }
 }
