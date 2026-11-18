@@ -54,12 +54,13 @@ export const Contact = () => {
               <WhatsAppIcon />
               {t(ui.hero.whatsapp)}
             </a>
-            <a href={`mailto:${profile.email}`} className="btn btn-secondary btn-lg">
-              <Mail aria-hidden="true" />
-              {profile.email}
-            </a>
           </div>
           <p className={styles.linkedin}>
+            <a href={`mailto:${profile.email}`} className={styles.social} title={profile.email}>
+              <Mail aria-hidden="true" />
+              <span className={styles.full}>{profile.email}</span>
+              <span className={styles.short}>Email</span>
+            </a>
             <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.social}>
               <LinkedInIcon />
               LinkedIn

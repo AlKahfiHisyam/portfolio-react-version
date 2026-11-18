@@ -1,12 +1,17 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { experience, recentCount, ui } from '../data/portfolio';
 import { Reveal } from './Reveal';
 import styles from './Experience.module.css';
 
+// On phones only the first two points show until the reader asks for the rest.
+const PREVIEW = 2;
+
 const Job = ({ job, index }) => {
   const { t } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const extra = job.points.length - PREVIEW;
   return (
     <Reveal as="li" className={styles.job} delay={(index % 3) * 60}>
       <span className={`${styles.node} ${job.current ? styles.live : ''}`} aria-hidden="true" />
@@ -28,9 +33,15 @@ const Job = ({ job, index }) => {
             {t(job.period)}
           </p>
         </header>
-        <ul className={styles.points}>
+        <ul className={`${styles.points} ${open ? styles.open : ''}`}>
           {job.points.map((point) => <li key={point.en}>{t(point)}</li>)}
         </ul>
+        {extra > 0 && (
+          <button type="button" className={styles.more} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+            {open ? t(ui.experience.showLess) : `${t(ui.experience.showAll)} (${job.points.length})`}
+            <ChevronDown aria-hidden="true" />
+          </button>
+        )}
       </article>
     </Reveal>
   );

@@ -148,7 +148,7 @@ html {
 }
 
 .section {
-  padding: clamp(72px, 10vw, 128px) 0;
+  padding: clamp(56px, 10vw, 128px) 0;
 }
 
 .section-subtle {
@@ -157,7 +157,7 @@ html {
 
 .section-head {
   max-width: 40rem;
-  margin-bottom: clamp(36px, 5vw, 56px);
+  margin-bottom: clamp(24px, 5vw, 56px);
 }
 
 .section-head h2 {
@@ -171,6 +171,36 @@ html {
   margin-top: 14px;
   font-size: 18px;
   color: var(--ink-2);
+}
+
+/* On phones, long rows of cards become a sideways swipe instead of a tall stack. */
+@media (max-width: 719px) {
+  .swipe {
+    display: grid !important;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    grid-template-columns: none !important;
+    gap: 14px !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 4px var(--gutter) 14px;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+
+  .swipe::-webkit-scrollbar {
+    display: none;
+  }
+
+  .swipe > * {
+    scroll-snap-align: start;
+  }
+
+  .section-head p {
+    font-size: 16px;
+  }
 }
 
 .btn {

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Check, Download, Mail } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { profile, ui, whatsappLink } from '../data/portfolio';
@@ -8,6 +9,8 @@ import styles from './Paths.module.css';
 export const Paths = () => {
   const { t } = useLanguage();
   const { build, hire } = ui.paths;
+  // Phones show one offer at a time; wider screens show both side by side.
+  const [tab, setTab] = useState('build');
 
   return (
     <section id="services" className="section" aria-labelledby="services-title">
@@ -16,8 +19,29 @@ export const Paths = () => {
           <h2 id="services-title">{t(ui.paths.title)}</h2>
         </Reveal>
 
+        <div className={styles.tabs} role="tablist" aria-label={t(ui.paths.title)}>
+          {['build', 'hire'].map((key) => (
+            <button
+              key={key}
+              type="button"
+              role="tab"
+              id={`tab-${key}`}
+              aria-selected={tab === key}
+              aria-controls={`panel-${key}`}
+              onClick={() => setTab(key)}
+            >
+              {t(key === 'build' ? ui.paths.tabBuild : ui.paths.tabHire)}
+            </button>
+          ))}
+        </div>
+
         <div className={styles.grid}>
-          <Reveal as="article" className={`${styles.path} ${styles.build}`}>
+          <Reveal
+            as="article"
+            id="panel-build"
+            aria-labelledby="tab-build"
+            className={`${styles.path} ${styles.build} ${tab === 'build' ? styles.active : ''}`}
+          >
             <h3>{t(build.title)}</h3>
             <p className={styles.intro}>{t(build.intro)}</p>
             <ul>
@@ -33,13 +57,14 @@ export const Paths = () => {
                 className="btn btn-wa"
               >
                 <WhatsAppIcon />
-                {t(build.cta)}
+                <span className={styles.full}>{t(build.cta)}</span>
+                <span className={styles.short}>WhatsApp</span>
               </a>
               <a href="#contact" className="btn btn-secondary">{t(build.secondary)}</a>
             </div>
           </Reveal>
 
-          <Reveal as="article" className={styles.path} delay={100}>
+          <Reveal as="article" id="panel-hire" aria-labelledby="tab-hire" className={`${styles.path} ${tab === 'hire' ? styles.active : ''}`} delay={100}>
             <h3>{t(hire.title)}</h3>
             <p className={styles.intro}>{t(hire.intro)}</p>
             <ul>

@@ -1,5 +1,5 @@
 import { BadgeCheck, GraduationCap } from 'lucide-react';
-import { about, profile, ui } from '../data/portfolio';
+import { about, ui } from '../data/portfolio';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Activity } from './Activity';
 import { Reveal } from './Reveal';
@@ -24,12 +24,6 @@ export const About = () => {
           </div>
 
           <div className={styles.bento}>
-            {profile.photo && (
-              <Reveal className={`${styles.tile} ${styles.photoTile}`}>
-                <img src={profile.photo} alt={t(ui.about.photoAlt)} loading="lazy" />
-              </Reveal>
-            )}
-
             <Reveal className={`${styles.tile} ${styles.grad}`}>
               <span className={styles.icon}><GraduationCap aria-hidden="true" /></span>
               <p className={styles.big}>{t(ui.about.best)}</p>

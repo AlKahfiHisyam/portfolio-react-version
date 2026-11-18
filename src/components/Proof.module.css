@@ -1,6 +1,6 @@
 .proof {
   position: relative;
-  padding: clamp(48px, 7vw, 80px) 0;
+  padding: clamp(36px, 7vw, 80px) 0;
   background: var(--ink);
   color: var(--bg);
   overflow: hidden;
@@ -24,18 +24,20 @@
 .grid {
   position: relative;
   display: grid;
-  gap: 32px 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 18px;
 }
 
 .item {
   display: grid;
-  gap: 8px;
-  padding-top: 18px;
+  align-content: start;
+  gap: 6px;
+  padding-top: 14px;
   border-top: 1px solid rgb(255 255 255 / 0.18);
 }
 
 .value {
-  font-size: clamp(40px, 5vw, 60px);
+  font-size: clamp(30px, 5vw, 60px);
   line-height: 1;
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -44,19 +46,13 @@
 
 .label {
   max-width: 22rem;
-  font-size: 15px;
+  font-size: clamp(13px, 1.3vw, 15px);
   line-height: 1.5;
   color: rgb(255 255 255 / 0.74);
 }
 
 :global([data-theme='dark']) .label {
   color: var(--ink-2);
-}
-
-@media (min-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (min-width: 1024px) {

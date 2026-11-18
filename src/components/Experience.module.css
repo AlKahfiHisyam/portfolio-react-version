@@ -199,6 +199,49 @@
   color: var(--accent-text);
 }
 
+.more {
+  display: none;
+}
+
+@media (max-width: 719px) {
+  .card {
+    padding: 16px;
+  }
+
+  .points {
+    font-size: 15px;
+  }
+
+  .points:not(.open) li:nth-child(n + 3) {
+    display: none;
+  }
+
+  .more {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 40px;
+    margin-top: 6px;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent-text);
+    cursor: pointer;
+  }
+
+  .more svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.25s var(--ease-out);
+  }
+
+  .more[aria-expanded='true'] svg {
+    transform: rotate(180deg);
+  }
+}
+
 .earlier summary {
   display: inline-flex;
   align-items: center;

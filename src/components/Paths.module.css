@@ -33,8 +33,9 @@
 .path ul {
   list-style: none;
   display: grid;
-  gap: 12px;
-  margin: 24px 0 32px;
+  gap: 10px;
+  margin: 20px 0 24px;
+  font-size: 16px;
 }
 
 .path li {
@@ -66,5 +67,87 @@
 @media (min-width: 860px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tabs,
+.short {
+  display: none;
+}
+
+@media (max-width: 859px) {
+  .tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin-bottom: 14px;
+    padding: 4px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--bg-subtle);
+  }
+
+  .tabs button {
+    min-height: 42px;
+    border: 0;
+    border-radius: 9px;
+    background: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-3);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .tabs button[aria-selected='true'] {
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .path:not(.active) {
+    display: none;
+  }
+
+  .path {
+    padding: 20px;
+  }
+
+  .path h3 {
+    font-size: 22px;
+  }
+
+  .intro {
+    font-size: 15px;
+  }
+
+  .path ul {
+    gap: 8px;
+    margin: 16px 0 20px;
+    font-size: 15px;
+  }
+
+  .path li svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .full {
+    display: none;
+  }
+
+  .short {
+    display: inline;
+  }
+
+  .actions :global(.btn) {
+    padding: 0 10px;
+    font-size: 14px;
+    white-space: normal;
+    text-align: center;
   }
 }

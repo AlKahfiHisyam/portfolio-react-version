@@ -109,6 +109,8 @@ export const ui = {
   },
   paths: {
     title: { en: 'Two ways to work with me', id: 'Dua cara bekerja sama' },
+    tabBuild: { en: 'Build something', id: 'Butuh dibangun' },
+    tabHire: { en: 'Hire me', id: 'Merekrut' },
     build: {
       title: { en: 'Need something built?', id: 'Butuh sesuatu dibangun?' },
       intro: {
@@ -194,6 +196,8 @@ export const ui = {
     title: { en: 'Experience', id: 'Pengalaman' },
     earlier: { en: 'Earlier roles', id: 'Pengalaman sebelumnya' },
     current: { en: 'Now', id: 'Sekarang' },
+    showAll: { en: 'Show all', id: 'Lihat semua' },
+    showLess: { en: 'Show less', id: 'Lebih sedikit' },
     intro: {
       en: 'Four roles running in parallel today: an enterprise, a logistics company, a foundation and my own clients.',
       id: 'Empat peran berjalan bersamaan hari ini: perusahaan besar, perusahaan logistik, yayasan, dan klien sendiri.',

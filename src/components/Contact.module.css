@@ -164,3 +164,42 @@
     align-items: start;
   }
 }
+
+.short {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .channels :global(.btn) {
+    width: 100%;
+  }
+
+  .linkedin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .social {
+    justify-content: center;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+
+  .full {
+    display: none;
+  }
+
+  .short {
+    display: inline;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .channels {
+    margin-top: 20px;
+  }
+}

@@ -59,12 +59,12 @@ export const Work = () => {
           <p>{t(ui.work.intro)}</p>
         </Reveal>
 
-        <ul className={styles.grid}>
+        <ul className={`${styles.grid} swipe`}>
           {featuredProjects.map((project, i) => <Card key={project.title} project={project} index={i} />)}
         </ul>
 
         <Reveal as="h3" className={styles.minorTitle}>{t(ui.work.gallery)}</Reveal>
-        <ul className={styles.minor}>
+        <ul className={`${styles.minor} swipe`}>
           {galleryProjects.map((project, i) => {
             // Unreleased projects have no site to open, so their card is not a link.
             const Tag = project.url ? 'a' : 'div';

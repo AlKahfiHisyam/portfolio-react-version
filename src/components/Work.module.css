@@ -155,7 +155,7 @@
 }
 
 .minorTitle {
-  margin-top: clamp(64px, 9vw, 96px);
+  margin-top: clamp(40px, 9vw, 96px);
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: 600;
