@@ -1,38 +1,68 @@
+import { BadgeCheck, GraduationCap } from 'lucide-react';
+import { about, profile, ui } from '../data/portfolio';
+import { useLanguage } from '../i18n/LanguageContext';
+import { Activity } from './Activity';
+import { Reveal } from './Reveal';
 import styles from './About.module.css';
 
 export const About = () => {
-  const aboutCards = [
-    {
-      icon: '👨‍💻',
-      title: 'Who I Am',
-      description: 'A passionate software engineer with a keen eye for design. I specialize in creating applications across multiple platforms—from web and mobile to desktop solutions. With expertise in modern technologies, I transform ideas into functional and visually stunning digital products.'
-    },
-    {
-      icon: '🚀',
-      title: 'What I Do',
-      description: 'I build full-stack solutions for diverse platforms using the latest frameworks and technologies. From frontend UI/UX design to backend architecture, database design to deployment, I handle the complete software development lifecycle with meticulous attention to performance and scalability.'
-    },
-    {
-      icon: '🎯',
-      title: 'My Goals',
-      description: 'To continuously learn and evolve with the ever-changing tech landscape. I\'m committed to delivering high-quality solutions that make a real impact and help businesses achieve their digital transformation goals.'
-    }
-  ];
+  const { t } = useLanguage();
 
   return (
-    <section id="about" className={styles.about}>
-      <div className={styles.stars}></div>
-      <div className={styles.container}>
-        <h2 className={styles.title}>About Me</h2>
-        <div className={styles.grid}>
-          {aboutCards.map((card, idx) => (
-            <div key={idx} className={styles.card}>
-              <div className={styles.icon}>{card.icon}</div>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </div>
-          ))}
+    <section id="about" className={`section ${styles.about}`} aria-labelledby="about-title">
+      <div className="container">
+        <Reveal className="section-head">
+          <h2 id="about-title">{t(ui.about.title)}</h2>
+        </Reveal>
+
+        <div className={styles.layout}>
+          <div className={styles.story}>
+            <Reveal as="p" className={styles.statement}>{t(ui.about.statement)}</Reveal>
+            <Reveal className={styles.prose} delay={80}>
+              {about.paragraphs.map((text) => <p key={text.en}>{t(text)}</p>)}
+            </Reveal>
+          </div>
+
+          <div className={styles.bento}>
+            {profile.photo && (
+              <Reveal className={`${styles.tile} ${styles.photoTile}`}>
+                <img src={profile.photo} alt={t(ui.about.photoAlt)} loading="lazy" />
+              </Reveal>
+            )}
+
+            <Reveal className={`${styles.tile} ${styles.grad}`}>
+              <span className={styles.icon}><GraduationCap aria-hidden="true" /></span>
+              <p className={styles.big}>{t(ui.about.best)}</p>
+              <p className={styles.small}>{t(ui.about.gpa)}</p>
+            </Reveal>
+
+            <Reveal className={`${styles.tile} ${styles.cert}`} delay={80}>
+              <span className={styles.icon}><BadgeCheck aria-hidden="true" /></span>
+              <p className={styles.mid}>{t(ui.about.certTitle)}</p>
+              <p className={styles.small}>{t(about.courses)}</p>
+            </Reveal>
+
+            <Reveal className={styles.activity} delay={120}>
+              <Activity />
+            </Reveal>
+          </div>
         </div>
+
+        <Reveal className={styles.toolkit}>
+          <h3>{t(ui.about.toolkit)}</h3>
+          <div className={styles.groups}>
+            {about.toolkit.map((row) => (
+              <div key={t(row.group)} className={styles.group}>
+                <p className={styles.groupName}>{t(row.group)}</p>
+                <ul className={styles.chips}>
+                  {t(row.items).split(', ').map((item, i) => (
+                    <li key={item} style={{ '--i': i }}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

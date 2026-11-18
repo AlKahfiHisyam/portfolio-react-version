@@ -1,0 +1,54 @@
+.card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.card figcaption {
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.card figcaption a {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration-color: var(--field);
+}
+
+.card figcaption a:hover {
+  color: var(--accent-text);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 64px;
+  margin-top: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bars span {
+  flex: 1;
+  min-width: 0;
+  height: calc(8% + var(--h) * 92%);
+  border-radius: 2px 2px 0 0;
+  background: var(--accent);
+  opacity: calc(0.45 + var(--h) * 0.55);
+}
+
+.bars .empty {
+  height: 3px;
+  background: var(--line);
+  opacity: 1;
+}
+
+.axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--ink-3);
+}

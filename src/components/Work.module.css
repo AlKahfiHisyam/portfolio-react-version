@@ -1,0 +1,211 @@
+.grid {
+  list-style: none;
+  display: grid;
+  gap: 28px 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.35s var(--ease-out), transform 0.35s var(--ease-out), border-color 0.35s;
+}
+
+.card:hover .media,
+.card:focus-visible .media {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+}
+
+/* The capture is a full page: it rests on the top and scrolls through on hover. */
+.shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  transition: object-position 7s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.card:hover .shot,
+.card:focus-visible .shot {
+  object-position: 50% 100%;
+}
+
+.logoMedia {
+  display: grid;
+  place-items: center;
+  background: var(--bg-subtle);
+}
+
+.logo {
+  width: auto;
+  max-width: 30%;
+  max-height: 96px;
+}
+
+/* PI Smart has no public screens, so the coded illustration fills the frame instead. */
+.panel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  container-type: inline-size;
+}
+
+/* Render the panel at its natural desktop width, then zoom it to fit the card. */
+.panel > figure {
+  width: 780px;
+  padding: 28px 28px 0;
+  zoom: 0.68;
+}
+
+@container (max-width: 480px) {
+  .panel > figure {
+    zoom: 0.45;
+  }
+}
+
+@container (min-width: 600px) {
+  .panel > figure {
+    zoom: 0.78;
+  }
+}
+
+.panel figcaption {
+  display: none;
+}
+
+.badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.body {
+  display: grid;
+  gap: 2px;
+  padding: 16px 4px 0;
+}
+
+.title,
+.minorName {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.title svg,
+.minorName svg {
+  width: 18px;
+  height: 18px;
+  color: var(--ink-3);
+  transition: transform 0.25s var(--ease-out), color 0.25s;
+}
+
+.card:hover .title svg,
+.card:hover .minorName svg {
+  color: var(--accent-text);
+  transform: translate(2px, -2px);
+}
+
+.kind {
+  color: var(--ink-2);
+  font-size: 16px;
+}
+
+.highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: start;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--ok-soft);
+  color: var(--ok);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.highlight svg {
+  width: 15px;
+  height: 15px;
+}
+
+.minorTitle {
+  margin-top: clamp(64px, 9vw, 96px);
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.minor {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 24px 16px;
+}
+
+.minor .media {
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+}
+
+.minorName {
+  font-size: 16px;
+}
+
+.minor .kind {
+  font-size: 14px;
+}
+
+.mock {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.static {
+  cursor: default;
+}
+
+.static:hover .media {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  border-color: var(--line);
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot {
+    transition: none;
+  }
+}
