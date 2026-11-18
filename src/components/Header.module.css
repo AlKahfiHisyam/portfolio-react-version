@@ -27,17 +27,13 @@
   margin-right: auto;
 }
 
-.mark {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  background: var(--ink);
-  color: var(--bg);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
 .nav {

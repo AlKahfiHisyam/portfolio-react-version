@@ -14,7 +14,7 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <a href="#top" className={styles.brand}>
-          <span className={styles.mark} aria-hidden="true">AK</span>
+          <img src="/assets/profile-96.webp" alt="" className={styles.avatar} width="34" height="34" />
           {profile.shortName}
         </a>
 

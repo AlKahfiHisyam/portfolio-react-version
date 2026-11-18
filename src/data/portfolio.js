@@ -15,7 +15,7 @@ export const profile = {
   whatsapp: '6285854789879',
   linkedin: 'https://linkedin.com/in/careeralkahfi',
   github: 'AlKahfiHisyam',
-  photo: null,
+  photo: '/assets/profile.jpg',
   cv: '/assets/cv-al-kahfi-2026.pdf',
 };
 
