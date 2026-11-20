@@ -402,6 +402,20 @@ export const recentCount = 5;
 
 export const experience = [
   {
+    period: { en: 'Apr 2026 – now', id: 'Apr 2026 – sekarang' },
+    company: 'Tergar Indonesia',
+    current: true,
+    mark: { color: '#b45309', logo: '/assets/logos/tergar.webp' },
+    role: { en: 'Webmaster, remote', id: 'Webmaster, remote' },
+    points: [
+      { en: 'Managed and maintained the official Tergar Indonesia website (tergar.or.id), ensuring high availability, security, and an optimal user experience.', id: 'Mengelola dan memelihara website resmi Tergar Indonesia (tergar.or.id), memastikan ketersediaan tinggi, keamanan, dan pengalaman pengguna yang optimal.' },
+      { en: "Implemented website enhancements, performance optimizations, and SEO improvements to strengthen Tergar Indonesia's online presence and increase public engagement.", id: 'Menerapkan peningkatan website, optimasi performa, dan perbaikan SEO untuk memperkuat kehadiran online Tergar Indonesia dan meningkatkan keterlibatan publik.' },
+      { en: "Collaborated directly with the Chairman of Tergar Indonesia Foundation and internal teams to support digital initiatives aligned with the organization's mission.", id: 'Bekerja langsung dengan Ketua Yayasan Tergar Indonesia dan tim internal untuk mendukung inisiatif digital yang sejalan dengan misi organisasi.' },
+      { en: 'Provided technical support for online registration, event information, and content management for meditation programs and community activities.', id: 'Memberikan dukungan teknis untuk pendaftaran online, informasi acara, dan pengelolaan konten program meditasi serta kegiatan komunitas.' },
+      { en: "Supported the preparation of the organization's digital platforms for Yongey Mingyur Rinpoche's visit to Indonesia (November 2026), ensuring website readiness and a seamless online experience for participants.", id: 'Mendukung persiapan platform digital organisasi untuk kunjungan Yongey Mingyur Rinpoche ke Indonesia (November 2026), memastikan kesiapan website dan pengalaman online yang lancar bagi peserta.' },
+    ],
+  },
+  {
     period: { en: 'Sep 2025 – now', id: 'Sep 2025 – sekarang' },
     company: 'Januardi Logistik (JLOG)',
     current: true,
@@ -433,17 +447,14 @@ export const experience = [
     ],
   },
   {
-    period: { en: 'Apr 2026 – now', id: 'Apr 2026 – sekarang' },
-    company: 'Tergar Indonesia',
+    period: { en: 'Aug 2021 – now', id: 'Agu 2021 – sekarang' },
+    company: 'Freelance',
     current: true,
-    mark: { color: '#b45309', logo: '/assets/logos/tergar.webp' },
-    role: { en: 'Webmaster, remote', id: 'Webmaster, remote' },
+    mark: { color: '#7c3aed', logo: '/assets/logos/freelance.svg', cover: true },
+    role: { en: 'Freelance Full Stack Developer, Gresik', id: 'Full Stack Developer Freelance, Gresik' },
     points: [
-      { en: 'Managed and maintained the official Tergar Indonesia website (tergar.or.id), ensuring high availability, security, and an optimal user experience.', id: 'Mengelola dan memelihara website resmi Tergar Indonesia (tergar.or.id), memastikan ketersediaan tinggi, keamanan, dan pengalaman pengguna yang optimal.' },
-      { en: "Implemented website enhancements, performance optimizations, and SEO improvements to strengthen Tergar Indonesia's online presence and increase public engagement.", id: 'Menerapkan peningkatan website, optimasi performa, dan perbaikan SEO untuk memperkuat kehadiran online Tergar Indonesia dan meningkatkan keterlibatan publik.' },
-      { en: "Collaborated directly with the Chairman of Tergar Indonesia Foundation and internal teams to support digital initiatives aligned with the organization's mission.", id: 'Bekerja langsung dengan Ketua Yayasan Tergar Indonesia dan tim internal untuk mendukung inisiatif digital yang sejalan dengan misi organisasi.' },
-      { en: 'Provided technical support for online registration, event information, and content management for meditation programs and community activities.', id: 'Memberikan dukungan teknis untuk pendaftaran online, informasi acara, dan pengelolaan konten program meditasi serta kegiatan komunitas.' },
-      { en: "Supported the preparation of the organization's digital platforms for Yongey Mingyur Rinpoche's visit to Indonesia (November 2026), ensuring website readiness and a seamless online experience for participants.", id: 'Mendukung persiapan platform digital organisasi untuk kunjungan Yongey Mingyur Rinpoche ke Indonesia (November 2026), memastikan kesiapan website dan pengalaman online yang lancar bagi peserta.' },
+      { en: 'Delivered 15+ custom web applications for clients spanning e-commerce, education, and healthcare, managing full project lifecycles from discovery through production deployment.', id: 'Menyelesaikan 15+ aplikasi web kustom untuk klien di bidang e-commerce, pendidikan, dan kesehatan, mengelola seluruh siklus proyek dari analisis kebutuhan hingga deploy produksi.' },
+      { en: 'Architected and built tailored solutions using Laravel, WordPress, and JavaScript, consistently meeting client deadlines and earning repeat engagements.', id: 'Merancang dan membangun solusi khusus dengan Laravel, WordPress, dan JavaScript, selalu memenuhi tenggat klien dan mendapatkan proyek lanjutan.' },
     ],
   },
   {
@@ -456,17 +467,6 @@ export const experience = [
       { en: 'Integrated third-party APIs to power dynamic lab search and geolocation-based services, improving data accuracy and search relevance for healthcare consumers.', id: 'Mengintegrasikan API pihak ketiga untuk pencarian lab yang dinamis dan layanan berbasis geolokasi, meningkatkan akurasi data dan relevansi pencarian bagi pengguna layanan kesehatan.' },
       { en: 'Partnered with designers to implement responsive, WCAG-accessible interfaces aligned with healthcare UX standards, ensuring compliance and usability.', id: 'Bekerja sama dengan desainer untuk menerapkan antarmuka responsif yang memenuhi WCAG dan standar UX kesehatan, memastikan kepatuhan dan kemudahan penggunaan.' },
       { en: 'Collaborated directly with CTO and CEO in a fast-paced agile environment, translating business requirements into production-ready features within tight sprint cycles.', id: 'Bekerja langsung dengan CTO dan CEO di lingkungan agile yang cepat, menerjemahkan kebutuhan bisnis menjadi fitur siap produksi dalam siklus sprint yang ketat.' },
-    ],
-  },
-  {
-    period: { en: 'Aug 2021 – now', id: 'Agu 2021 – sekarang' },
-    company: 'Freelance',
-    current: true,
-    mark: { color: '#7c3aed', logo: '/assets/logos/freelance.svg', cover: true },
-    role: { en: 'Freelance Full Stack Developer, Gresik', id: 'Full Stack Developer Freelance, Gresik' },
-    points: [
-      { en: 'Delivered 15+ custom web applications for clients spanning e-commerce, education, and healthcare, managing full project lifecycles from discovery through production deployment.', id: 'Menyelesaikan 15+ aplikasi web kustom untuk klien di bidang e-commerce, pendidikan, dan kesehatan, mengelola seluruh siklus proyek dari analisis kebutuhan hingga deploy produksi.' },
-      { en: 'Architected and built tailored solutions using Laravel, WordPress, and JavaScript, consistently meeting client deadlines and earning repeat engagements.', id: 'Merancang dan membangun solusi khusus dengan Laravel, WordPress, dan JavaScript, selalu memenuhi tenggat klien dan mendapatkan proyek lanjutan.' },
     ],
   },
   {
