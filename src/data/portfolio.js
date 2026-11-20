@@ -379,19 +379,6 @@ export const featuredProjects = [
     tint: 'blue',
     url: 'https://tracerstudy.unair.ac.id/',
   },
-  {
-    title: 'Build With Angga',
-    kind: { en: 'Web templates for an online course platform', id: 'Template web untuk platform kursus online' },
-    summary: {
-      en: 'Turned Figma designs into 25 ready-to-use web products for the BuildWithAngga library, and fixed frontend bugs on the main platform.',
-      id: 'Mengubah desain Figma menjadi 25 produk web siap pakai untuk library BuildWithAngga, dan memperbaiki bug frontend di platform utama.',
-    },
-    role: { en: 'Web designer intern, 2021', id: 'Web designer (magang), 2021' },
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    logo: '/assets/projects/build-with-angga.svg',
-    tint: 'violet',
-    url: 'https://buildwithangga.com/',
-  },
 ];
 
 // Smaller pieces, shown as a gallery. Hovering a thumbnail scrolls through the captured page.
@@ -402,6 +389,7 @@ export const galleryProjects = [
   { title: 'Desa Tegalsiwalan', kind: { en: 'Village website and shallot archive', id: 'Website desa dan arsip bawang merah' }, stack: 'Next.js', shot: '/assets/shots/tegalsiwalan.webp', url: 'https://tegalsiwalan.web.id/' },
   { title: 'Kelurahan Sukorame', kind: { en: 'Kelurahan website, Gresik', id: 'Website kelurahan, Gresik' }, stack: 'Next.js', shot: '/assets/shots/sukorame.webp', url: 'https://desasukorame.web.id/' },
   { title: 'Kost Cemara Gresik', kind: { en: 'Boarding house website', id: 'Website rumah kos' }, stack: 'React', shot: '/assets/shots/kostcemara.webp', url: 'https://kostcemaragresik.netlify.app/' },
+  { title: 'Build With Angga', kind: { en: '25 web templates for an online course platform', id: '25 template web untuk platform kursus online' }, stack: 'HTML, CSS, JavaScript', shot: '/assets/projects/build-with-angga.svg', logo: true, url: 'https://buildwithangga.com/' },
   { title: 'Psycho AI', kind: { en: 'AI personality assessment', id: 'Tes kepribadian dengan AI' }, stack: 'React, Node.js, MongoDB', shot: '/assets/shots/psychoai.webp', url: 'https://psycho-ai.onrender.com/' },
   // Not public yet: `preview` marks a drawn mock-up rather than a capture of a live site.
   { title: 'ERENT', kind: { en: 'Electronics rental, web and mobile', id: 'Sewa elektronik, web dan mobile' }, stack: 'React, Prisma, Tailwind CSS', shot: '/assets/shots/erent-preview.svg', preview: true, url: null, status: 'inProgress' },
