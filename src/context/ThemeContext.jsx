@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 // index.html sets data-theme before React loads, so the first paint already matches.
 const getInitialTheme = () => {
   const current = document.documentElement.dataset.theme;
-  return current === 'dark' || current === 'light' ? current : 'dark';
+  return current === 'dark' || current === 'light' ? current : 'light';
 };
 
 export const ThemeProvider = ({ children }) => {
@@ -15,7 +15,7 @@ export const ThemeProvider = ({ children }) => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  // Only an explicit toggle is remembered, so the dark default reaches everyone who never chose.
+  // Only an explicit toggle is remembered, so the light default reaches everyone who never chose.
   const toggleTheme = () => setTheme((t) => {
     const next = t === 'dark' ? 'light' : 'dark';
     try {
