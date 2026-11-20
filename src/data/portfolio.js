@@ -45,6 +45,7 @@ export const ui = {
     },
     primary: { en: 'Start a project', id: 'Mulai proyek' },
     whatsapp: { en: 'Chat on WhatsApp', id: 'Chat via WhatsApp' },
+    whatsappShort: { en: 'Chat', id: 'Chat' },
     whatsappText: {
       en: 'Hi Al-Kahfi, I found your portfolio and would like to talk about a project.',
       id: 'Halo Al-Kahfi, saya melihat portfolio Anda dan ingin diskusi tentang sebuah proyek.',
@@ -53,10 +54,7 @@ export const ui = {
       en: 'Open to projects, remote contracts and full\u2011time roles.',
       id: 'Terbuka untuk proyek, kontrak remote, dan posisi full\u2011time.',
     },
-    showcase: { en: 'Recent work', id: 'Karya terbaru' },
-    slide: { en: 'Show', id: 'Tampilkan' },
-    localTime: { en: 'Gresik, Indonesia. Local time', id: 'Gresik, Indonesia. Waktu setempat' },
-    shippedFor: { en: 'Shipped for', id: 'Pernah dikerjakan untuk' },
+    base: { en: 'Based in Gresik, Indonesia. UTC+7.', id: 'Berbasis di Gresik, Indonesia. UTC+7.' },
   },
   panel: {
     product: 'PI Smart',
@@ -157,15 +155,9 @@ export const ui = {
     gallery: { en: 'Smaller projects', id: 'Proyek lainnya' },
     notPublic: { en: 'Not public', id: 'Tidak publik' },
     inProgress: { en: 'In progress', id: 'Sedang dikerjakan' },
-  },
-  proof: {
-    title: { en: 'In numbers', id: 'Dalam angka' },
-    items: [
-      { value: 30000, suffix: '+', label: { en: 'employees use PI Smart across 10+ Pupuk Indonesia companies', id: 'karyawan memakai PI Smart di 10+ perusahaan grup Pupuk Indonesia' } },
-      { value: 20, suffix: '+', label: { en: 'HR modules shipped: KPI, travel, promotions, reimbursement and more', id: 'modul HR dirilis: KPI, perjalanan dinas, promosi, reimbursement, dan lainnya' } },
-      { value: 15, suffix: '+', label: { en: 'web apps delivered for clients in e-commerce, education and health', id: 'aplikasi web untuk klien di e-commerce, pendidikan, dan kesehatan' } },
-      { value: 7, suffix: { en: ' a day', id: ' per hari' }, label: { en: 'qualified leads from JLOG’s rebuilt website, up from 1–3 a week', id: 'calon klien dari website baru JLOG, sebelumnya 1–3 per minggu' } },
-    ],
+    live: { en: 'Live', id: 'Online' },
+    landed: { en: 'Landed', id: 'Selesai' },
+    gate: { en: 'Gate', id: 'Gerbang' },
   },
   process: {
     title: { en: 'How a project runs', id: 'Alur sebuah proyek' },
@@ -216,6 +208,17 @@ export const ui = {
     best: { en: 'Best Graduate', id: 'Lulusan Terbaik' },
     gpa: { en: 'GPA 3.74 / 4.00, Information Systems, Universitas Airlangga', id: 'IPK 3,74 / 4,00, Sistem Informasi, Universitas Airlangga' },
     certTitle: { en: 'Certified', id: 'Bersertifikat' },
+    pass: {
+      title: { en: 'Boarding pass', id: 'Boarding pass' },
+      passenger: { en: 'Passenger', id: 'Penumpang' },
+      from: { en: 'From', id: 'Dari' },
+      fromValue: { en: 'Gresik, UTC+7', id: 'Gresik, UTC+7' },
+      to: { en: 'To', id: 'Ke' },
+      toValue: { en: 'Your team', id: 'Tim Anda' },
+      class: { en: 'Class', id: 'Kelas' },
+      classValue: { en: 'Full stack & AI engineer', id: 'Full stack & AI engineer' },
+      education: { en: 'Education', id: 'Pendidikan' },
+    },
   },
   activity: {
     total: { en: 'contributions on GitHub', id: 'kontribusi di GitHub' },
@@ -254,13 +257,40 @@ export const ui = {
   },
 };
 
-export const clients = ['PT Pupuk Indonesia', 'JLOG', 'Tergar Indonesia', 'Universitas Airlangga', 'Private MD Labs', 'Agendakota', 'Build With Angga'];
+export const board = {
+  title: { en: 'Departures', id: 'Keberangkatan' },
+  cols: {
+    since: { en: 'Since', id: 'Sejak' },
+    flight: { en: 'Flight', id: 'Kode' },
+    dest: { en: 'Destination', id: 'Tujuan' },
+    status: { en: 'Status', id: 'Status' },
+  },
+  status: {
+    live: { en: 'LIVE', id: 'AKTIF' },
+    landed: { en: 'LANDED', id: 'SELESAI' },
+    boarding: { en: 'BOARDING', id: 'BOARDING' },
+  },
+  statusLong: {
+    live: { en: 'running now', id: 'berjalan sekarang' },
+    landed: { en: 'completed', id: 'selesai' },
+    boarding: { en: 'boarding now, your project or role comes next', id: 'boarding sekarang, proyek atau posisi Anda berikutnya' },
+  },
+  // Flight codes are labels for the board, not real identifiers.
+  rows: [
+    { since: '2022', flight: 'PIS-22', dest: 'PUPUK INDONESIA', role: { en: 'Full stack developer, PI Smart', id: 'Full stack developer, PI Smart' }, status: 'live', href: '#work-pi-smart' },
+    { since: '2025', flight: 'JLG-25', dest: 'JLOG SURABAYA', role: { en: 'Digitalization Lead', id: 'Digitalization Lead' }, status: 'live', href: '#work-jlog' },
+    { since: '2026', flight: 'TGR-26', dest: 'TERGAR INDONESIA', role: { en: 'Webmaster', id: 'Webmaster' }, status: 'live', href: '#work-tergar-indonesia' },
+    { since: '2025', flight: 'PMD-25', dest: 'PRIVATE MD LABS', role: { en: 'Remote contract, USA', id: 'Kontrak remote, AS' }, status: 'landed', href: '#work-private-md-labs' },
+    { since: '2026', flight: 'AKH-01', dest: { en: 'YOUR TEAM', id: 'TIM ANDA' }, role: { en: 'Your project or role', id: 'Proyek atau posisi Anda' }, status: 'boarding', href: '#contact', next: true },
+  ],
+};
 
 // `shot` is a full-page capture of the live site; it scrolls inside a browser frame.
 // `tint` names the tile colour (see Work.module.css).
 export const featuredProjects = [
   {
     title: 'PI Smart',
+    status: 'live',
     kind: { en: 'HR super app, PT Pupuk Indonesia', id: 'Aplikasi HR, PT Pupuk Indonesia' },
     summary: {
       en: 'One platform for employee data, attendance, leave, payroll, KPI, travel, promotions and reimbursement. I led 20+ modules on Laravel and Golang services that sync with the companion mobile app, and I am moving the frontend from jQuery to React and Next.js.',
@@ -277,6 +307,7 @@ export const featuredProjects = [
     url: 'https://pismart.pupuk-indonesia.com/',
   },  {
     title: 'JLOG',
+    status: 'live',
     kind: { en: 'Logistics company website and SEO', id: 'Website dan SEO perusahaan logistik' },
     summary: {
       en: 'I rebuilt the corporate website and SEO for a freight and customs logistics company, so prospects find JLOG on Google and ask for a quote.',
@@ -292,6 +323,7 @@ export const featuredProjects = [
   },
   {
     title: 'JLOG SuperApp',
+    status: 'live',
     kind: { en: 'Internal operations app', id: 'Aplikasi operasional internal' },
     summary: {
       en: 'One app for JLOG’s day-to-day operations, so commercial, operations and finance work from the same data. Customers can also track shipment progress without logging in.',
@@ -304,19 +336,8 @@ export const featuredProjects = [
     url: 'https://superapp.jlog.id/',
   },
   {
-    title: 'Private MD Labs',
-    kind: { en: 'Lab test booking, USA', id: 'Pemesanan tes lab, AS' },
-    summary: {
-      en: 'Patients across the United States pick a test, find a nearby lab and get results online. I worked on lab location data, search and geolocation, and accessible interfaces.',
-      id: 'Pasien di seluruh Amerika Serikat memilih tes, menemukan lab terdekat, dan menerima hasil secara online. Saya mengerjakan data lokasi lab, pencarian dan geolokasi, serta antarmuka yang aksesibel.',
-    },
-    role: { en: 'Full stack developer, remote, 2025', id: 'Full stack developer, remote, 2025' },
-    stack: ['Laravel', 'Vue', 'PostgreSQL'],
-    shot: '/assets/shots/privatemdlabs.webp',
-    tint: 'slate',
-    url: 'https://www.privatemdlabs.com/',
-  },  {
     title: 'Tergar Indonesia',
+    status: 'live',
     kind: { en: 'Foundation website, webmaster', id: 'Website yayasan, webmaster' },
     summary: {
       en: 'I run tergar.or.id: performance, security, SEO, online registration and event content, including Yongey Mingyur Rinpoche’s visit to Indonesia in November 2026.',
@@ -329,7 +350,21 @@ export const featuredProjects = [
     url: 'https://tergar.or.id/',
   },
   {
+    title: 'Private MD Labs',
+    status: 'landed',
+    kind: { en: 'Lab test booking, USA', id: 'Pemesanan tes lab, AS' },
+    summary: {
+      en: 'Patients across the United States pick a test, find a nearby lab and get results online. I worked on lab location data, search and geolocation, and accessible interfaces.',
+      id: 'Pasien di seluruh Amerika Serikat memilih tes, menemukan lab terdekat, dan menerima hasil secara online. Saya mengerjakan data lokasi lab, pencarian dan geolokasi, serta antarmuka yang aksesibel.',
+    },
+    role: { en: 'Full stack developer, remote, 2025', id: 'Full stack developer, remote, 2025' },
+    stack: ['Laravel', 'Vue', 'PostgreSQL'],
+    shot: '/assets/shots/privatemdlabs.webp',
+    tint: 'slate',
+    url: 'https://www.privatemdlabs.com/',
+  },  {
     title: 'Agendakota',
+    status: 'landed',
     kind: { en: 'Event management platform', id: 'Platform manajemen acara' },
     summary: {
       en: 'Organisers find vendors and venues, sell tickets and track sales from one dashboard. I built vendor and venue discovery features.',
@@ -343,6 +378,7 @@ export const featuredProjects = [
   },
   {
     title: 'Tracer Study UNAIR',
+    status: 'landed',
     kind: { en: 'Graduate survey, Universitas Airlangga', id: 'Survei alumni, Universitas Airlangga' },
     summary: {
       en: 'The university surveys its graduates and tracks where they work and how their careers develop.',
@@ -354,19 +390,6 @@ export const featuredProjects = [
     tint: 'blue',
     url: 'https://tracerstudy.unair.ac.id/',
   },
-  {
-    title: 'Build With Angga',
-    kind: { en: 'Web templates for an online course platform', id: 'Template web untuk platform kursus online' },
-    summary: {
-      en: 'Turned Figma designs into 25 ready-to-use web products for the BuildWithAngga library, and fixed frontend bugs on the main platform.',
-      id: 'Mengubah desain Figma menjadi 25 produk web siap pakai untuk library BuildWithAngga, dan memperbaiki bug frontend di platform utama.',
-    },
-    role: { en: 'Web designer intern, 2021', id: 'Web designer (magang), 2021' },
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    logo: '/assets/projects/build-with-angga.svg',
-    tint: 'violet',
-    url: 'https://buildwithangga.com/',
-  },
 ];
 
 // Smaller pieces, shown as a gallery. Hovering a thumbnail scrolls through the captured page.
@@ -377,6 +400,7 @@ export const galleryProjects = [
   { title: 'Desa Tegalsiwalan', kind: { en: 'Village website and shallot archive', id: 'Website desa dan arsip bawang merah' }, stack: 'Next.js', shot: '/assets/shots/tegalsiwalan.webp', url: 'https://tegalsiwalan.web.id/' },
   { title: 'Kelurahan Sukorame', kind: { en: 'Kelurahan website, Gresik', id: 'Website kelurahan, Gresik' }, stack: 'Next.js', shot: '/assets/shots/sukorame.webp', url: 'https://desasukorame.web.id/' },
   { title: 'Kost Cemara Gresik', kind: { en: 'Boarding house website', id: 'Website rumah kos' }, stack: 'React', shot: '/assets/shots/kostcemara.webp', url: 'https://kostcemaragresik.netlify.app/' },
+  { title: 'Build With Angga', kind: { en: '25 web templates for an online course platform', id: '25 template web untuk platform kursus online' }, stack: 'HTML, CSS, JavaScript', shot: '/assets/projects/build-with-angga.svg', logo: true, url: 'https://buildwithangga.com/' },
   { title: 'Psycho AI', kind: { en: 'AI personality assessment', id: 'Tes kepribadian dengan AI' }, stack: 'React, Node.js, MongoDB', shot: '/assets/shots/psychoai.webp', url: 'https://psycho-ai.onrender.com/' },
   // Not public yet: `preview` marks a drawn mock-up rather than a capture of a live site.
   { title: 'ERENT', kind: { en: 'Electronics rental, web and mobile', id: 'Sewa elektronik, web dan mobile' }, stack: 'React, Prisma, Tailwind CSS', shot: '/assets/shots/erent-preview.svg', preview: true, url: null, status: 'inProgress' },
@@ -388,6 +412,20 @@ export const galleryProjects = [
 export const recentCount = 5;
 
 export const experience = [
+  {
+    period: { en: 'Apr 2026 – now', id: 'Apr 2026 – sekarang' },
+    company: 'Tergar Indonesia',
+    current: true,
+    mark: { color: '#b45309', logo: '/assets/logos/tergar.webp' },
+    role: { en: 'Webmaster, remote', id: 'Webmaster, remote' },
+    points: [
+      { en: 'Managed and maintained the official Tergar Indonesia website (tergar.or.id), ensuring high availability, security, and an optimal user experience.', id: 'Mengelola dan memelihara website resmi Tergar Indonesia (tergar.or.id), memastikan ketersediaan tinggi, keamanan, dan pengalaman pengguna yang optimal.' },
+      { en: "Implemented website enhancements, performance optimizations, and SEO improvements to strengthen Tergar Indonesia's online presence and increase public engagement.", id: 'Menerapkan peningkatan website, optimasi performa, dan perbaikan SEO untuk memperkuat kehadiran online Tergar Indonesia dan meningkatkan keterlibatan publik.' },
+      { en: "Collaborated directly with the Chairman of Tergar Indonesia Foundation and internal teams to support digital initiatives aligned with the organization's mission.", id: 'Bekerja langsung dengan Ketua Yayasan Tergar Indonesia dan tim internal untuk mendukung inisiatif digital yang sejalan dengan misi organisasi.' },
+      { en: 'Provided technical support for online registration, event information, and content management for meditation programs and community activities.', id: 'Memberikan dukungan teknis untuk pendaftaran online, informasi acara, dan pengelolaan konten program meditasi serta kegiatan komunitas.' },
+      { en: "Supported the preparation of the organization's digital platforms for Yongey Mingyur Rinpoche's visit to Indonesia (November 2026), ensuring website readiness and a seamless online experience for participants.", id: 'Mendukung persiapan platform digital organisasi untuk kunjungan Yongey Mingyur Rinpoche ke Indonesia (November 2026), memastikan kesiapan website dan pengalaman online yang lancar bagi peserta.' },
+    ],
+  },
   {
     period: { en: 'Sep 2025 – now', id: 'Sep 2025 – sekarang' },
     company: 'Januardi Logistik (JLOG)',
@@ -420,17 +458,14 @@ export const experience = [
     ],
   },
   {
-    period: { en: 'Apr 2026 – now', id: 'Apr 2026 – sekarang' },
-    company: 'Tergar Indonesia',
+    period: { en: 'Aug 2021 – now', id: 'Agu 2021 – sekarang' },
+    company: 'Freelance',
     current: true,
-    mark: { color: '#b45309', logo: '/assets/logos/tergar.webp' },
-    role: { en: 'Webmaster, remote', id: 'Webmaster, remote' },
+    mark: { color: '#7c3aed', logo: '/assets/logos/freelance.svg', cover: true },
+    role: { en: 'Freelance Full Stack Developer, Gresik', id: 'Full Stack Developer Freelance, Gresik' },
     points: [
-      { en: 'Managed and maintained the official Tergar Indonesia website (tergar.or.id), ensuring high availability, security, and an optimal user experience.', id: 'Mengelola dan memelihara website resmi Tergar Indonesia (tergar.or.id), memastikan ketersediaan tinggi, keamanan, dan pengalaman pengguna yang optimal.' },
-      { en: "Implemented website enhancements, performance optimizations, and SEO improvements to strengthen Tergar Indonesia's online presence and increase public engagement.", id: 'Menerapkan peningkatan website, optimasi performa, dan perbaikan SEO untuk memperkuat kehadiran online Tergar Indonesia dan meningkatkan keterlibatan publik.' },
-      { en: "Collaborated directly with the Chairman of Tergar Indonesia Foundation and internal teams to support digital initiatives aligned with the organization's mission.", id: 'Bekerja langsung dengan Ketua Yayasan Tergar Indonesia dan tim internal untuk mendukung inisiatif digital yang sejalan dengan misi organisasi.' },
-      { en: 'Provided technical support for online registration, event information, and content management for meditation programs and community activities.', id: 'Memberikan dukungan teknis untuk pendaftaran online, informasi acara, dan pengelolaan konten program meditasi serta kegiatan komunitas.' },
-      { en: "Supported the preparation of the organization's digital platforms for Yongey Mingyur Rinpoche's visit to Indonesia (November 2026), ensuring website readiness and a seamless online experience for participants.", id: 'Mendukung persiapan platform digital organisasi untuk kunjungan Yongey Mingyur Rinpoche ke Indonesia (November 2026), memastikan kesiapan website dan pengalaman online yang lancar bagi peserta.' },
+      { en: 'Delivered 15+ custom web applications for clients spanning e-commerce, education, and healthcare, managing full project lifecycles from discovery through production deployment.', id: 'Menyelesaikan 15+ aplikasi web kustom untuk klien di bidang e-commerce, pendidikan, dan kesehatan, mengelola seluruh siklus proyek dari analisis kebutuhan hingga deploy produksi.' },
+      { en: 'Architected and built tailored solutions using Laravel, WordPress, and JavaScript, consistently meeting client deadlines and earning repeat engagements.', id: 'Merancang dan membangun solusi khusus dengan Laravel, WordPress, dan JavaScript, selalu memenuhi tenggat klien dan mendapatkan proyek lanjutan.' },
     ],
   },
   {
@@ -443,17 +478,6 @@ export const experience = [
       { en: 'Integrated third-party APIs to power dynamic lab search and geolocation-based services, improving data accuracy and search relevance for healthcare consumers.', id: 'Mengintegrasikan API pihak ketiga untuk pencarian lab yang dinamis dan layanan berbasis geolokasi, meningkatkan akurasi data dan relevansi pencarian bagi pengguna layanan kesehatan.' },
       { en: 'Partnered with designers to implement responsive, WCAG-accessible interfaces aligned with healthcare UX standards, ensuring compliance and usability.', id: 'Bekerja sama dengan desainer untuk menerapkan antarmuka responsif yang memenuhi WCAG dan standar UX kesehatan, memastikan kepatuhan dan kemudahan penggunaan.' },
       { en: 'Collaborated directly with CTO and CEO in a fast-paced agile environment, translating business requirements into production-ready features within tight sprint cycles.', id: 'Bekerja langsung dengan CTO dan CEO di lingkungan agile yang cepat, menerjemahkan kebutuhan bisnis menjadi fitur siap produksi dalam siklus sprint yang ketat.' },
-    ],
-  },
-  {
-    period: { en: 'Aug 2021 – now', id: 'Agu 2021 – sekarang' },
-    company: 'Freelance',
-    current: true,
-    mark: { color: '#7c3aed', logo: '/assets/logos/freelance.svg', cover: true },
-    role: { en: 'Freelance Full Stack Developer, Gresik', id: 'Full Stack Developer Freelance, Gresik' },
-    points: [
-      { en: 'Delivered 15+ custom web applications for clients spanning e-commerce, education, and healthcare, managing full project lifecycles from discovery through production deployment.', id: 'Menyelesaikan 15+ aplikasi web kustom untuk klien di bidang e-commerce, pendidikan, dan kesehatan, mengelola seluruh siklus proyek dari analisis kebutuhan hingga deploy produksi.' },
-      { en: 'Architected and built tailored solutions using Laravel, WordPress, and JavaScript, consistently meeting client deadlines and earning repeat engagements.', id: 'Merancang dan membangun solusi khusus dengan Laravel, WordPress, dan JavaScript, selalu memenuhi tenggat klien dan mendapatkan proyek lanjutan.' },
     ],
   },
   {

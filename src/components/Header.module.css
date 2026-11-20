@@ -1,18 +1,18 @@
+/* The navigation is an overhead wayfinding sign: yellow panel, black type. It stays yellow at night. */
 .header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(1.6) blur(12px);
-  -webkit-backdrop-filter: saturate(1.6) blur(12px);
-  border-bottom: 1px solid var(--line);
+  background: var(--sign);
+  color: var(--on-sign);
+  border-bottom: 2px solid #141413;
 }
 
 .inner {
   height: var(--header-h);
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .brand {
@@ -21,40 +21,48 @@
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 800;
   letter-spacing: -0.01em;
   text-decoration: none;
   margin-right: auto;
 }
 
 .avatar {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid var(--line);
-  box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent);
+  border: 2px solid #141413;
 }
 
 .nav {
   display: none;
-  gap: 4px;
+  gap: 2px;
 }
 
 .nav a {
   display: inline-flex;
   align-items: center;
+  gap: 4px;
   min-height: 44px;
   padding: 0 12px;
-  border-radius: 8px;
-  font-size: 15px;
-  color: var(--ink-2);
+  font-size: 17px;
+  font-weight: 600;
   text-decoration: none;
 }
 
+.nav a svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.75;
+}
+
 .nav a:hover {
-  color: var(--ink);
-  background: var(--bg-subtle);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
 }
 
 .actions {
@@ -65,27 +73,25 @@
 
 .lang {
   display: flex;
-  padding: 2px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
+  border: 2px solid #141413;
+  border-radius: var(--radius-sm);
 }
 
 .lang button {
   min-width: 44px;
-  min-height: 44px;
+  min-height: 40px;
   border: 0;
-  border-radius: 7px;
   background: none;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink-3);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #141413;
   cursor: pointer;
 }
 
 .lang button[aria-pressed='true'] {
-  background: var(--bg-subtle);
-  color: var(--ink);
-  box-shadow: var(--shadow-sm);
+  background: #141413;
+  color: var(--sign);
 }
 
 .icon {
@@ -93,25 +99,36 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
+  border: 2px solid #141413;
+  border-radius: var(--radius-sm);
   background: none;
-  color: var(--ink-2);
+  color: #141413;
   cursor: pointer;
 }
 
-.icon:hover {
-  color: var(--ink);
-  border-color: var(--field);
+.icon:hover,
+.lang button:not([aria-pressed='true']):hover {
+  background: var(--sign-hover);
 }
 
 .icon svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+}
+
+.header :focus-visible {
+  outline-color: #141413;
+  box-shadow: none;
 }
 
 .actions .cta {
   display: none;
+  background: #141413;
+  color: var(--sign);
+}
+
+.actions .cta:hover {
+  background: #34332f;
 }
 
 @media (min-width: 640px) {
@@ -120,7 +137,7 @@
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1000px) {
   .nav {
     display: flex;
   }

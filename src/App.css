@@ -1,59 +1,84 @@
+/* World: a daytime airport terminal. Concrete ground, yellow wayfinding signs, black split-flap boards. */
 :root {
-  --bg: #ffffff;
-  --bg-subtle: #f6f7f9;
-  --surface: #ffffff;
-  --ink: #0f172a;
-  --ink-2: #475569;
-  --ink-3: #5e6a7d;
-  --line: #e4e8ee;
-  --field: #7d8799;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
-  --accent-text: #2563eb;
-  --accent-soft: #eef4ff;
-  --on-accent: #ffffff;
+  --bg: #ebe8e1;
+  --bg-subtle: #e1ddd4;
+  --surface: #f8f6f1;
+  --ink: #141413;
+  --ink-2: #3b3934;
+  --ink-3: #59564f;
+  --line: #cbc6bb;
+  --rule: #141413;
+  --field: #77726a;
+
+  --sign: #ffc629;
+  --sign-hover: #ffd35c;
+  --on-sign: #141413;
+
+  --board: #0e0f11;
+  --flap: #1e2024;
+  --flap-ink: #f3f0e7;
+  --flap-dim: #8d8a83;
+  --live: #3ddc75;
+
+  /* Used by the PI Smart illustration and other app-like surfaces. */
+  --accent: #141413;
+  --accent-hover: #34332f;
+  --accent-text: #141413;
+  --accent-soft: #fff0c4;
+  --on-accent: #ffc629;
+
   --wa: #167c46;
   --wa-hover: #12693b;
-  --ok: #15803d;
-  --ok-soft: #e8f6ee;
-  --warn-soft: #fff6e5;
-  --warn: #9a5b00;
-  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
-  --shadow-md: 0 1px 2px rgb(15 23 42 / 0.05), 0 8px 24px -8px rgb(15 23 42 / 0.12);
-  --shadow-lg: 0 2px 4px rgb(15 23 42 / 0.04), 0 24px 48px -16px rgb(15 23 42 / 0.18);
+  --ok: #157a3c;
+  --ok-soft: #dcefe1;
+  --warn: #8a5300;
+  --warn-soft: #fbeccb;
 
-  --font: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --page: 1160px;
-  --gutter: clamp(16px, 4vw, 32px);
-  --radius: 14px;
-  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgb(20 20 19 / 0.08);
+  --shadow-md: 0 2px 4px rgb(20 20 19 / 0.06), 0 12px 24px -10px rgb(20 20 19 / 0.22);
+  --shadow-lg: 0 4px 8px rgb(20 20 19 / 0.08), 0 28px 48px -18px rgb(20 20 19 / 0.35);
+
+  --font: 'Barlow', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Barlow Semi Condensed', 'Barlow', ui-sans-serif, system-ui, sans-serif;
+  --page: 1240px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --radius: 4px;
+  --radius-sm: 2px;
   --header-h: 64px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
   color-scheme: light;
 }
 
+/* Night terminal: the signs and boards stay, the concourse goes dark. */
 :root[data-theme='dark'] {
-  --bg: #0c0e13;
-  --bg-subtle: #11141a;
-  --surface: #151922;
-  --ink: #e8ecf3;
-  --ink-2: #a3adbf;
-  --ink-3: #8f99ab;
-  --line: #232a36;
-  --field: #6b7488;
-  --accent: #2563eb;
-  --accent-hover: #3b74f0;
-  --accent-text: #7aa7ff;
-  --accent-soft: #15213a;
-  --on-accent: #ffffff;
+  --bg: #141517;
+  --bg-subtle: #1a1b1e;
+  --surface: #212226;
+  --ink: #f1eee6;
+  --ink-2: #c6c2b8;
+  --ink-3: #a29e94;
+  --line: #36373c;
+  --rule: #f1eee6;
+  --field: #85827a;
+
+  --board: #0a0a0b;
+  --flap: #1b1d20;
+
+  --accent: #ffc629;
+  --accent-hover: #ffd35c;
+  --accent-text: #ffc629;
+  --accent-soft: #2e2716;
+  --on-accent: #141413;
+
   --ok: #4ade80;
-  --ok-soft: #10261a;
-  --warn-soft: #2a2010;
+  --ok-soft: #12291a;
   --warn: #f0b660;
+  --warn-soft: #2a2010;
+
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -8px rgb(0 0 0 / 0.6);
-  --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.3), 0 24px 48px -16px rgb(0 0 0 / 0.7);
+  --shadow-md: 0 2px 4px rgb(0 0 0 / 0.35), 0 12px 24px -10px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 4px 8px rgb(0 0 0 / 0.3), 0 28px 48px -18px rgb(0 0 0 / 0.7);
 
   color-scheme: dark;
 }
@@ -70,23 +95,27 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 16px);
   -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--field) var(--bg);
 }
 
 body {
   font-family: var(--font);
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.55;
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-wrap: pretty;
-  caret-color: var(--accent);
+  caret-color: var(--ink);
+  font-variant-numeric: tabular-nums;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+  font-family: var(--font-display);
   text-wrap: balance;
 }
 
@@ -99,6 +128,7 @@ svg {
 a {
   color: inherit;
   text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 button,
@@ -109,18 +139,14 @@ textarea {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent-text);
+  outline: 3px solid var(--ink);
   outline-offset: 3px;
-  border-radius: 6px;
+  box-shadow: 0 0 0 6px var(--sign);
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-
-html {
-  scrollbar-color: var(--field) transparent;
+  background: var(--sign);
+  color: var(--on-sign);
 }
 
 .skip-link {
@@ -128,10 +154,10 @@ html {
   left: var(--gutter);
   top: -100px;
   z-index: 100;
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
+  padding: 12px 16px;
   background: var(--ink);
-  color: var(--bg);
+  color: var(--sign);
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -148,7 +174,7 @@ html {
 }
 
 .section {
-  padding: clamp(56px, 10vw, 128px) 0;
+  padding: clamp(64px, 10vw, 128px) 0;
 }
 
 .section-subtle {
@@ -156,21 +182,37 @@ html {
 }
 
 .section-head {
-  max-width: 40rem;
-  margin-bottom: clamp(24px, 5vw, 56px);
+  max-width: 46rem;
+  margin-bottom: clamp(28px, 5vw, 56px);
 }
 
+/* Every section title is a direction sign: a yellow arrow plate beside the name. */
 .section-head h2 {
-  font-size: clamp(30px, 3.6vw, 44px);
-  line-height: 1.1;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: clamp(36px, 5.2vw, 64px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-head h2::before {
+  content: '';
+  flex: none;
+  width: 0.82em;
+  height: 0.82em;
+  background:
+    var(--sign)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141413' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='M5 12h13M12 5l7 7-7 7'/%3E%3C/svg%3E")
+    center / 68% no-repeat;
 }
 
 .section-head p {
-  margin-top: 14px;
-  font-size: 18px;
+  margin-top: 16px;
+  font-size: 20px;
   color: var(--ink-2);
+  max-width: 38rem;
 }
 
 /* On phones, long rows of cards become a sideways swipe instead of a tall stack. */
@@ -178,9 +220,9 @@ html {
   .swipe {
     display: grid !important;
     grid-auto-flow: column;
-    grid-auto-columns: 82%;
+    grid-auto-columns: 84%;
     grid-template-columns: none !important;
-    gap: 14px !important;
+    gap: 12px !important;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;
@@ -198,26 +240,31 @@ html {
     scroll-snap-align: start;
   }
 
+  body {
+    font-size: 17px;
+  }
+
   .section-head p {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
+/* Buttons are sign panels: square, heavy, unmistakable. */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 18px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 500;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  font-size: 17px;
+  font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  border: 1px solid transparent;
-  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.15s var(--ease-out);
+  border: 2px solid transparent;
+  transition: background-color 0.18s, border-color 0.18s, color 0.18s, transform 0.15s var(--ease-out);
 }
 
 .btn:active {
@@ -225,36 +272,48 @@ html {
 }
 
 .btn svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex: none;
+}
+
+.btn:disabled {
+  cursor: progress;
+  opacity: 0.7;
 }
 
 .btn-primary {
   background: var(--accent);
   color: var(--on-accent);
-  box-shadow: var(--shadow-sm), inset 0 1px 0 rgb(255 255 255 / 0.14);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
 }
 
+.btn-sign {
+  background: var(--sign);
+  color: var(--on-sign);
+}
+
+.btn-sign:hover {
+  background: var(--sign-hover);
+}
+
 .btn-secondary {
-  background: var(--surface);
+  background: transparent;
   color: var(--ink);
-  border-color: var(--line);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--rule);
 }
 
 .btn-secondary:hover {
-  border-color: var(--field);
+  background: var(--ink);
+  color: var(--bg);
 }
 
 .btn-wa {
   background: var(--wa);
   color: #ffffff;
-  box-shadow: var(--shadow-sm), inset 0 1px 0 rgb(255 255 255 / 0.14);
 }
 
 .btn-wa:hover {
@@ -262,9 +321,138 @@ html {
 }
 
 .btn-lg {
-  min-height: 50px;
-  padding: 0 22px;
+  min-height: 56px;
+  padding: 0 24px;
+  font-size: 19px;
+}
+
+/* WhatsApp links are tickets: notched paper, a dashed perforation, a plane on the stub that takes off on hover. */
+.ticket {
+  --stub: 52px;
+  --notch: 7px;
+  display: inline-flex;
+  min-height: 52px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.ticket-paper {
+  display: flex;
+  width: 100%;
+  -webkit-mask:
+    radial-gradient(circle var(--notch) at calc(100% - var(--stub)) 0, #0000 96%, #000),
+    radial-gradient(circle var(--notch) at calc(100% - var(--stub)) 100%, #0000 96%, #000);
+  -webkit-mask-composite: source-in;
+  mask:
+    radial-gradient(circle var(--notch) at calc(100% - var(--stub)) 0, #0000 96%, #000),
+    radial-gradient(circle var(--notch) at calc(100% - var(--stub)) 100%, #0000 96%, #000);
+  mask-composite: intersect;
+  transition: transform 0.15s var(--ease-out);
+}
+
+.ticket:active .ticket-paper {
+  transform: translateY(1px);
+}
+
+.ticket-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
   font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color 0.18s;
+}
+
+.ticket-main svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.ticket-stub {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--stub);
+  background: var(--sign);
+  color: #141413;
+  border-left: 2px dashed rgb(20 20 19 / 0.5);
+  overflow: hidden;
+}
+
+.ticket-stub svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ticket:hover .ticket-stub svg,
+.ticket:focus-visible .ticket-stub svg {
+  animation: takeoff 0.9s var(--ease-out);
+}
+
+@keyframes takeoff {
+  40% {
+    transform: translate(24px, -24px) scale(0.6);
+    opacity: 0;
+  }
+  41% {
+    transform: translate(-24px, 24px) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.ticket-wa .ticket-main {
+  background: var(--wa);
+  color: #ffffff;
+}
+
+.ticket-wa:hover .ticket-main {
+  background: var(--wa-hover);
+}
+
+.ticket-ink .ticket-main {
+  background: #141413;
+  color: var(--sign);
+}
+
+.ticket-ink:hover .ticket-main {
+  background: #34332f;
+}
+
+:root[data-theme='dark'] .ticket-ink .ticket-main {
+  background: var(--sign);
+  color: #141413;
+}
+
+:root[data-theme='dark'] .ticket-ink .ticket-stub {
+  background: #f3f0e7;
+}
+
+.ticket-lg {
+  --stub: 76px;
+  --notch: 9px;
+  min-height: 76px;
+}
+
+.ticket-lg .ticket-main {
+  gap: 12px;
+  padding: 0 24px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.ticket-lg .ticket-main svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ticket-lg .ticket-stub svg {
+  width: 30px;
+  height: 30px;
 }
 
 .text-link {
@@ -272,12 +460,8 @@ html {
   align-items: center;
   gap: 6px;
   min-height: 44px;
-  font-weight: 500;
-  color: var(--accent-text);
-  text-decoration: none;
-}
-
-.text-link:hover {
+  font-weight: 600;
+  color: var(--ink);
   text-decoration: underline;
 }
 
@@ -317,13 +501,22 @@ html {
 @media (prefers-reduced-motion: no-preference) {
   html.js .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    transform: translateY(20px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
     transition-delay: var(--reveal-delay, 0ms);
   }
 
   html.js .reveal.is-in {
     opacity: 1;
     transform: none;
+  }
+
+  html.js .section-head.reveal h2::before {
+    background-position: -1em center;
+    transition: background-position 0.6s var(--ease-out) 0.25s;
+  }
+
+  html.js .section-head.reveal.is-in h2::before {
+    background-position: center;
   }
 }

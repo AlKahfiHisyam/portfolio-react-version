@@ -1,117 +1,30 @@
-.experience {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-subtle);
-}
-
-.experience::before {
-  content: '';
-  position: absolute;
-  width: 640px;
-  height: 640px;
-  left: -260px;
-  top: 30%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgb(37 99 235 / 0.14), transparent 70%);
-  pointer-events: none;
-}
-
-.timeline {
-  --progress: 0;
-  --rail: 6px;
-  --gap: 22px;
-  position: relative;
-  padding-left: calc(var(--rail) + var(--gap));
-}
-
-@media (min-width: 720px) {
-  .timeline {
-    --rail: 22px;
-    --gap: 28px;
-  }
-}
-
-/* The rail and its accent fill. */
-.timeline::before,
-.timeline::after {
-  content: '';
-  position: absolute;
-  left: var(--rail);
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  border-radius: 2px;
-}
-
-.timeline::before {
-  background: var(--line);
-}
-
-.timeline::after {
-  background: linear-gradient(var(--accent), #14b8a6);
-  transform-origin: top;
-  transform: scaleY(var(--progress));
-  transition: transform 0.15s linear;
-}
-
-.list {
+/* The flight log: one ruled line per role, period in the first column like a departure time. */
+.log {
   list-style: none;
-  display: grid;
-  gap: 18px;
+  border-top: 3px solid var(--rule);
 }
 
 .job {
-  position: relative;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.node {
-  position: absolute;
-  left: calc(-1 * var(--gap) - 7px + 1px);
-  top: 30px;
-  z-index: 1;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--bg-subtle);
-  border: 2px solid var(--field);
-}
-
-.live {
-  border-color: var(--ok);
-  background: var(--ok);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .live::after {
-    content: '';
-    position: absolute;
-    inset: -6px;
-    border-radius: 50%;
-    border: 2px solid var(--ok);
-    animation: pulse 2.4s var(--ease-out) infinite;
-  }
-}
-
-.card {
-  padding: clamp(18px, 2.6vw, 26px);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s;
-}
-
-.card:hover {
-  transform: translateX(4px);
-  box-shadow: var(--shadow-md);
-  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+.period {
+  padding-top: 6px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink-2);
 }
 
 .head {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 14px;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
   align-items: center;
+  gap: 14px;
 }
 
 .mark {
@@ -119,141 +32,110 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--mark) 16%, var(--surface));
-  color: color-mix(in srgb, var(--mark) 75%, var(--ink));
-  border: 1px solid color-mix(in srgb, var(--mark) 30%, transparent);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-/* Company logos sit on a white plate so their own colours read in both themes. */
-.logoMark {
-  padding: 7px;
   background: #ffffff;
-  border-color: var(--line);
-}
-
-/* Placeholder artwork fills the whole badge. */
-.coverMark {
-  padding: 0;
+  outline: 1px solid var(--line);
   overflow: hidden;
 }
 
-.coverMark img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.logoMark img {
-  width: 100%;
-  height: 100%;
+.mark img {
+  width: 76%;
+  height: 76%;
   object-fit: contain;
 }
 
+.cover {
+  background: var(--mark);
+  outline: 0;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+}
+
 .who h3 {
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.3;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .role {
-  font-size: 15px;
-  color: var(--ink-2);
+  margin-top: 2px;
+  font-size: 16px;
+  color: var(--ink-3);
 }
 
-.period {
-  grid-column: 1 / -1;
-  display: flex;
+/* The NOW lamp marks every role that is still running. */
+.now {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
-  color: var(--ink-3);
-  font-variant-numeric: tabular-nums;
+  padding: 6px 10px;
+  background: #141413;
+  color: var(--live);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.now {
-  padding: 2px 9px;
-  border-radius: 999px;
-  background: var(--ok-soft);
-  color: var(--ok);
-  font-size: 12px;
-  font-weight: 600;
+.lamp {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 0 3px rgb(61 220 117 / 0.25);
 }
 
 .points {
-  margin-top: 14px;
-  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0 58px;
+  padding-left: 18px;
+  font-size: 17px;
   color: var(--ink-2);
-  font-size: 16px;
-}
-
-.points li + li {
-  margin-top: 6px;
+  max-width: 70ch;
 }
 
 .points li::marker {
-  color: var(--accent-text);
+  color: var(--ink-3);
 }
 
 .more {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-left: 58px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
 }
 
-@media (max-width: 719px) {
-  .card {
-    padding: 16px;
-  }
+.more svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s var(--ease-out);
+}
 
-  .points {
-    font-size: 15px;
-  }
-
-  .points:not(.open) li:nth-child(n + 3) {
-    display: none;
-  }
-
-  .more {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    min-height: 40px;
-    margin-top: 6px;
-    padding: 0;
-    border: 0;
-    background: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--accent-text);
-    cursor: pointer;
-  }
-
-  .more svg {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.25s var(--ease-out);
-  }
-
-  .more[aria-expanded='true'] svg {
-    transform: rotate(180deg);
-  }
+.more[aria-expanded='true'] svg {
+  transform: rotate(180deg);
 }
 
 .earlier summary {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  min-height: 44px;
-  margin-top: 14px;
-  padding: 0 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  font-weight: 500;
-  color: var(--accent-text);
+  gap: 8px;
+  min-height: 48px;
+  margin-top: 20px;
+  padding: 0 18px;
+  border: 2px solid var(--rule);
+  font-weight: 700;
   cursor: pointer;
   list-style: none;
 }
@@ -272,32 +154,42 @@
   transform: rotate(180deg);
 }
 
-.earlier .list {
-  margin-top: 18px;
+.earlier .log {
+  margin-top: 20px;
 }
 
-@media (min-width: 720px) {
-  .head {
-    grid-template-columns: auto 1fr auto;
+@media (max-width: 719px) {
+  .job {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
   }
 
   .period {
-    grid-column: auto;
-    justify-self: end;
+    padding-top: 0;
+    font-size: 16px;
   }
 
-  .points {
-    padding-left: 78px;
+  .head {
+    grid-template-columns: 40px minmax(0, 1fr);
   }
-}
 
-@keyframes pulse {
-  from {
-    transform: scale(0.6);
-    opacity: 0.8;
+  .mark {
+    width: 40px;
+    height: 40px;
   }
-  to {
-    transform: scale(1.5);
-    opacity: 0;
+
+  .now {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .who h3 {
+    font-size: 21px;
+  }
+
+  .points,
+  .more {
+    margin-left: 0;
   }
 }

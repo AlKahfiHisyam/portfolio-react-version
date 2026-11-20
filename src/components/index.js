@@ -1,6 +1,5 @@
 export { Header } from './Header';
 export { Hero } from './Hero';
-export { Proof } from './Proof';
 export { Paths } from './Paths';
 export { Work } from './Work';
 export { Process } from './Process';

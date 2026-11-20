@@ -42,7 +42,7 @@ Builds the systems companies run on day to day, not just marketing sites: since 
 
 - Name shown as "Al-Kahfi Hisyam" (full name Al-Kahfi Fajrhul Hisyam).
 - Contact: career.alkahfi@gmail.com, WhatsApp +62 858-5478-9879, linkedin.com/in/careeralkahfi, github.com/AlKahfiHisyam.
-- Visual direction (chosen 2026-11-18): the category standard, a modern developer portfolio executed at full craft, not a themed world. Craft bar: Linear / Vercel product pages and Stripe (clear primary actions, large product visuals, firm section rhythm, proof that convinces business buyers).
+- Visual direction (chosen 2026-11-20, replacing the 2026-11-18 category-standard look): "Papan Keberangkatan", a daytime airport terminal world with split-flap departure boards and yellow wayfinding signs. See the surface brief for the direction contract.
 - The previous "space" theme and the reference site pujayana.com are not binding; pujayana.com explicitly forbids imitation of its design, so nothing may be copied from it.
 
 ## Evidence on Hand

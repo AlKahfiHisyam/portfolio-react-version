@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Mail } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { profile, ui, whatsappLink } from '../data/portfolio';
-import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from './BrandIcons';
+import { GitHubIcon, LinkedInIcon } from './BrandIcons';
+import { TicketLink } from './TicketLink';
 import styles from './Contact.module.css';
 
 const emptyForm = { name: '', email: '', message: '' };
@@ -41,19 +42,15 @@ export const Contact = () => {
     <section id="contact" className={`section ${styles.contact}`} aria-labelledby="contact-title">
       <div className={`container ${styles.grid}`}>
         <div>
-          <h2 id="contact-title" className={styles.title}>{t(c.title)}</h2>
-          <p className={styles.intro}>{t(c.intro)}</p>
+          <div className={`section-head ${styles.head}`}>
+            <h2 id="contact-title">{t(c.title)}</h2>
+            <p>{t(c.intro)}</p>
+          </div>
 
           <div className={styles.channels}>
-            <a
-              href={whatsappLink(t(ui.hero.whatsappText))}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-wa btn-lg"
-            >
-              <WhatsAppIcon />
+            <TicketLink href={whatsappLink(t(ui.hero.whatsappText))} size="lg">
               {t(ui.hero.whatsapp)}
-            </a>
+            </TicketLink>
           </div>
           <p className={styles.linkedin}>
             <a href={`mailto:${profile.email}`} className={styles.social} title={profile.email}>
@@ -73,6 +70,7 @@ export const Contact = () => {
         </div>
 
         <form className={styles.form} onSubmit={handleSubmit}>
+          <p className={styles.desk} aria-hidden="true">Check-in</p>
           <div className={styles.pair}>
             <label className={styles.field}>
               <span>{t(c.name)}</span>

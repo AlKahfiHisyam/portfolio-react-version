@@ -1,54 +1,92 @@
+/* Two check-in counters: A in sign yellow for people who need something built, B on board black for hiring. */
 .grid {
   display: grid;
   gap: 20px;
 }
 
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .path {
   display: flex;
   flex-direction: column;
-  padding: clamp(24px, 4vw, 40px);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  padding: clamp(24px, 3.4vw, 40px);
+  background: var(--sign);
+  color: #141413;
+  border: 2px solid #141413;
 }
 
-.build {
-  background: var(--accent-soft);
-  border-color: color-mix(in srgb, var(--accent) 22%, var(--line));
+.hire {
+  background: var(--board);
+  color: #f3f0e7;
 }
 
 .path h3 {
-  font-size: clamp(24px, 2.4vw, 30px);
-  line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.counter {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.5em;
+  height: 1.5em;
+  background: #141413;
+  color: var(--sign);
+  font-size: 0.9em;
+}
+
+.hire .counter {
+  background: var(--sign);
+  color: #141413;
 }
 
 .intro {
-  margin-top: 10px;
-  color: var(--ink-2);
+  margin-top: 18px;
+  font-size: 19px;
+  color: #3a372f;
+}
+
+.hire .intro {
+  color: #c9c5bb;
 }
 
 .path ul {
   list-style: none;
   display: grid;
-  gap: 10px;
-  margin: 20px 0 24px;
-  font-size: 16px;
+  gap: 12px;
+  margin: 26px 0 32px;
+  padding-top: 22px;
+  border-top: 2px solid currentColor;
 }
 
 .path li {
-  display: flex;
+  display: grid;
+  grid-template-columns: 22px 1fr;
   gap: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .path li svg {
-  flex: none;
-  width: 20px;
-  height: 20px;
-  margin-top: 3px;
-  color: var(--accent-text);
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  stroke-width: 3;
+}
+
+.hire li svg {
+  color: var(--sign);
 }
 
 .actions {
@@ -64,10 +102,24 @@
   }
 }
 
-@media (min-width: 860px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.path .actions :global(.btn-secondary) {
+  border-color: currentColor;
+  color: inherit;
+}
+
+.path:not(.hire) .actions :global(.btn-secondary):hover {
+  background: #141413;
+  color: var(--sign);
+}
+
+.hire .actions :global(.btn-secondary):hover {
+  background: #f3f0e7;
+  color: #141413;
+}
+
+.path :focus-visible {
+  outline-color: currentColor;
+  box-shadow: none;
 }
 
 .tabs,
@@ -79,57 +131,30 @@
   .tabs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4px;
-    margin-bottom: 14px;
-    padding: 4px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: var(--bg-subtle);
+    margin-bottom: 12px;
+    border: 2px solid var(--rule);
   }
 
   .tabs button {
-    min-height: 42px;
+    min-height: 48px;
     border: 0;
-    border-radius: 9px;
     background: none;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--ink-3);
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
   }
 
   .tabs button[aria-selected='true'] {
-    background: var(--surface);
-    color: var(--ink);
-    box-shadow: var(--shadow-sm);
+    background: var(--ink);
+    color: var(--bg);
   }
 
   .path:not(.active) {
     display: none;
   }
 
-  .path {
-    padding: 20px;
-  }
-
-  .path h3 {
-    font-size: 22px;
-  }
-
-  .intro {
-    font-size: 15px;
-  }
-
-  .path ul {
-    gap: 8px;
-    margin: 16px 0 20px;
-    font-size: 15px;
-  }
-
-  .path li svg {
-    width: 18px;
-    height: 18px;
+  .path li {
+    font-size: 17px;
   }
 
   .actions {
@@ -146,8 +171,20 @@
 
   .actions :global(.btn) {
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 15px;
     white-space: normal;
     text-align: center;
   }
+}
+
+:root[data-theme='dark'] .hire {
+  background: #1d1f23;
+  border-color: var(--rule);
+}
+
+/* On the yellow counter the ticket stub turns black so the tear-off still reads. */
+.path:not(.hire) :global(.ticket-stub) {
+  background: #141413;
+  color: var(--sign);
+  border-left-color: rgb(255 198 41 / 0.6);
 }

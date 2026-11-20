@@ -3,7 +3,7 @@ import { Check, Download, Mail } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { profile, ui, whatsappLink } from '../data/portfolio';
 import { Reveal } from './Reveal';
-import { WhatsAppIcon } from './BrandIcons';
+import { TicketLink } from './TicketLink';
 import styles from './Paths.module.css';
 
 export const Paths = () => {
@@ -42,7 +42,7 @@ export const Paths = () => {
             aria-labelledby="tab-build"
             className={`${styles.path} ${styles.build} ${tab === 'build' ? styles.active : ''}`}
           >
-            <h3>{t(build.title)}</h3>
+            <h3><span className={styles.counter} aria-hidden="true">A</span>{t(build.title)}</h3>
             <p className={styles.intro}>{t(build.intro)}</p>
             <ul>
               {build.items.map((item) => (
@@ -50,22 +50,16 @@ export const Paths = () => {
               ))}
             </ul>
             <div className={styles.actions}>
-              <a
-                href={whatsappLink(t(ui.hero.whatsappText))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-wa"
-              >
-                <WhatsAppIcon />
+              <TicketLink href={whatsappLink(t(ui.hero.whatsappText))}>
                 <span className={styles.full}>{t(build.cta)}</span>
                 <span className={styles.short}>WhatsApp</span>
-              </a>
+              </TicketLink>
               <a href="#contact" className="btn btn-secondary">{t(build.secondary)}</a>
             </div>
           </Reveal>
 
-          <Reveal as="article" id="panel-hire" aria-labelledby="tab-hire" className={`${styles.path} ${tab === 'hire' ? styles.active : ''}`} delay={100}>
-            <h3>{t(hire.title)}</h3>
+          <Reveal as="article" id="panel-hire" aria-labelledby="tab-hire" className={`${styles.path} ${styles.hire} ${tab === 'hire' ? styles.active : ''}`} delay={100}>
+            <h3><span className={styles.counter} aria-hidden="true">B</span>{t(hire.title)}</h3>
             <p className={styles.intro}>{t(hire.intro)}</p>
             <ul>
               {hire.items.map((item) => (
@@ -74,12 +68,12 @@ export const Paths = () => {
             </ul>
             <div className={styles.actions}>
               {profile.cv ? (
-                <a href={profile.cv} download className="btn btn-primary">
+                <a href={profile.cv} download className="btn btn-sign">
                   <Download aria-hidden="true" />
                   {t(hire.cv)}
                 </a>
               ) : (
-                <a href={`mailto:${profile.email}`} className="btn btn-primary">
+                <a href={`mailto:${profile.email}`} className="btn btn-sign">
                   <Mail aria-hidden="true" />
                   {t(hire.email)}
                 </a>

@@ -1,6 +1,7 @@
-import { Header, Hero, Proof, Paths, Work, Process, Experience, About, Testimonials, Contact, Footer, FloatingWhatsApp } from './components';
-import { useLanguage } from './i18n/LanguageContext';
+// Global styles load before the component modules so a module can refine a shared class.
 import './App.css';
+import { Header, Hero, Paths, Work, Process, Experience, About, Testimonials, Contact, Footer, FloatingWhatsApp } from './components';
+import { useLanguage } from './i18n/LanguageContext';
 
 function App() {
   const { lang } = useLanguage();
@@ -11,7 +12,6 @@ function App() {
       <Header />
       <main id="main">
         <Hero />
-        <Proof />
         <Work />
         <Paths />
         <Process />
