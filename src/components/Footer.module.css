@@ -28,7 +28,8 @@
 }
 
 .wordmark {
-  margin: clamp(32px, 6vw, 64px) 0 -0.2em;
+  margin-top: clamp(32px, 6vw, 64px);
+  padding-bottom: 0.06em;
   font-family: var(--font-display);
   font-size: clamp(96px, 24vw, 340px);
   font-weight: 800;
@@ -44,6 +45,14 @@
   background: #141413;
   color: #d9d5cb;
   font-size: 15px;
+}
+
+/* On phones the floating WhatsApp ticket parks at the page end: leave room so it never covers the bar's text. */
+@media (max-width: 639px) {
+  .bottom {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+    font-size: 14px;
+  }
 }
 
 .bottomInner {
