@@ -1,47 +1,46 @@
+/* GitHub activity as a small arrivals board: weekly bars in sign yellow on board black. */
 .card {
   padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  background: var(--board);
+  color: var(--flap-ink);
+  border: 1px solid #2b2d31;
 }
 
 .card figcaption {
-  font-size: 15px;
-  color: var(--ink-2);
+  font-size: 16px;
+  color: #c9c5bb;
 }
 
 .card figcaption a {
-  font-weight: 600;
-  color: var(--ink);
-  text-decoration-color: var(--field);
+  font-weight: 700;
+  color: var(--sign);
 }
 
-.card figcaption a:hover {
-  color: var(--accent-text);
+.card :focus-visible {
+  outline-color: var(--sign);
+  box-shadow: none;
 }
 
 .bars {
   display: flex;
   align-items: flex-end;
   gap: 2px;
-  height: 64px;
+  height: 72px;
   margin-top: 16px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid #3a3b40;
 }
 
 .bars span {
   flex: 1;
   min-width: 0;
   height: calc(8% + var(--h) * 92%);
-  border-radius: 2px 2px 0 0;
-  background: var(--accent);
-  opacity: calc(0.45 + var(--h) * 0.55);
+  background: var(--sign);
+  opacity: calc(0.4 + var(--h) * 0.6);
 }
 
 .bars .empty {
   height: 3px;
-  background: var(--line);
+  background: #3a3b40;
   opacity: 1;
 }
 
@@ -50,5 +49,5 @@
   justify-content: space-between;
   margin-top: 6px;
   font-size: 13px;
-  color: var(--ink-3);
+  color: var(--flap-dim);
 }

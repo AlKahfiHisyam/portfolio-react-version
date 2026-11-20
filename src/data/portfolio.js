@@ -208,6 +208,17 @@ export const ui = {
     best: { en: 'Best Graduate', id: 'Lulusan Terbaik' },
     gpa: { en: 'GPA 3.74 / 4.00, Information Systems, Universitas Airlangga', id: 'IPK 3,74 / 4,00, Sistem Informasi, Universitas Airlangga' },
     certTitle: { en: 'Certified', id: 'Bersertifikat' },
+    pass: {
+      title: { en: 'Boarding pass', id: 'Boarding pass' },
+      passenger: { en: 'Passenger', id: 'Penumpang' },
+      from: { en: 'From', id: 'Dari' },
+      fromValue: { en: 'Gresik, UTC+7', id: 'Gresik, UTC+7' },
+      to: { en: 'To', id: 'Ke' },
+      toValue: { en: 'Your team', id: 'Tim Anda' },
+      class: { en: 'Class', id: 'Kelas' },
+      classValue: { en: 'Full stack & AI engineer', id: 'Full stack & AI engineer' },
+      education: { en: 'Education', id: 'Pendidikan' },
+    },
   },
   activity: {
     total: { en: 'contributions on GitHub', id: 'kontribusi di GitHub' },
