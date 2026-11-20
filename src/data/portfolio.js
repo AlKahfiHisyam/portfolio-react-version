@@ -155,15 +155,9 @@ export const ui = {
     gallery: { en: 'Smaller projects', id: 'Proyek lainnya' },
     notPublic: { en: 'Not public', id: 'Tidak publik' },
     inProgress: { en: 'In progress', id: 'Sedang dikerjakan' },
-  },
-  proof: {
-    title: { en: 'In numbers', id: 'Dalam angka' },
-    items: [
-      { value: 30000, suffix: '+', label: { en: 'employees use PI Smart across 10+ Pupuk Indonesia companies', id: 'karyawan memakai PI Smart di 10+ perusahaan grup Pupuk Indonesia' } },
-      { value: 20, suffix: '+', label: { en: 'HR modules shipped: KPI, travel, promotions, reimbursement and more', id: 'modul HR dirilis: KPI, perjalanan dinas, promosi, reimbursement, dan lainnya' } },
-      { value: 15, suffix: '+', label: { en: 'web apps delivered for clients in e-commerce, education and health', id: 'aplikasi web untuk klien di e-commerce, pendidikan, dan kesehatan' } },
-      { value: 7, suffix: { en: ' a day', id: ' per hari' }, label: { en: 'qualified leads from JLOG’s rebuilt website, up from 1–3 a week', id: 'calon klien dari website baru JLOG, sebelumnya 1–3 per minggu' } },
-    ],
+    live: { en: 'Live', id: 'Online' },
+    landed: { en: 'Landed', id: 'Selesai' },
+    gate: { en: 'Gate', id: 'Gerbang' },
   },
   process: {
     title: { en: 'How a project runs', id: 'Alur sebuah proyek' },
@@ -285,6 +279,7 @@ export const board = {
 export const featuredProjects = [
   {
     title: 'PI Smart',
+    status: 'live',
     kind: { en: 'HR super app, PT Pupuk Indonesia', id: 'Aplikasi HR, PT Pupuk Indonesia' },
     summary: {
       en: 'One platform for employee data, attendance, leave, payroll, KPI, travel, promotions and reimbursement. I led 20+ modules on Laravel and Golang services that sync with the companion mobile app, and I am moving the frontend from jQuery to React and Next.js.',
@@ -301,6 +296,7 @@ export const featuredProjects = [
     url: 'https://pismart.pupuk-indonesia.com/',
   },  {
     title: 'JLOG',
+    status: 'live',
     kind: { en: 'Logistics company website and SEO', id: 'Website dan SEO perusahaan logistik' },
     summary: {
       en: 'I rebuilt the corporate website and SEO for a freight and customs logistics company, so prospects find JLOG on Google and ask for a quote.',
@@ -316,6 +312,7 @@ export const featuredProjects = [
   },
   {
     title: 'JLOG SuperApp',
+    status: 'live',
     kind: { en: 'Internal operations app', id: 'Aplikasi operasional internal' },
     summary: {
       en: 'One app for JLOG’s day-to-day operations, so commercial, operations and finance work from the same data. Customers can also track shipment progress without logging in.',
@@ -367,6 +364,7 @@ export const featuredProjects = [
   },
   {
     title: 'Tracer Study UNAIR',
+    status: 'landed',
     kind: { en: 'Graduate survey, Universitas Airlangga', id: 'Survei alumni, Universitas Airlangga' },
     summary: {
       en: 'The university surveys its graduates and tracks where they work and how their careers develop.',
