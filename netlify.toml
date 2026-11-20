@@ -1,0 +1,6 @@
+# The site now lives at alkahfi.dev; old Netlify links (LinkedIn, CV, shares) forward there.
+[[redirects]]
+  from = "/*"
+  to = "https://alkahfi.dev/:splat"
+  status = 301
+  force = true
