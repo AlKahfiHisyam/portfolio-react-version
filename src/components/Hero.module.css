@@ -1,197 +1,79 @@
 .hero {
-  position: relative;
-  padding-top: clamp(48px, 8vw, 96px);
+  padding: clamp(28px, 4vw, 48px) 0 clamp(56px, 8vw, 104px);
   overflow: hidden;
-  isolation: isolate;
-}
-
-/* Dot grid fading out toward the edges, with two slow-drifting colour glows behind it. */
-.backdrop {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(color-mix(in srgb, var(--ink) 14%, transparent) 1px, transparent 1.3px) 0 0 / 24px 24px;
-  -webkit-mask-image: radial-gradient(80% 70% at 60% 30%, #000 30%, transparent 75%);
-  mask-image: radial-gradient(80% 70% at 60% 30%, #000 30%, transparent 75%);
-}
-
-.glowA,
-.glowB {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.55;
-}
-
-.glowA {
-  width: 520px;
-  height: 520px;
-  top: -120px;
-  right: 6%;
-  background: radial-gradient(circle, rgb(37 99 235 / 0.35), transparent 70%);
-}
-
-.glowB {
-  width: 420px;
-  height: 420px;
-  top: 220px;
-  right: 30%;
-  background: radial-gradient(circle, rgb(20 184 166 / 0.28), transparent 70%);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .glowA {
-    animation: drift 18s ease-in-out infinite alternate;
-  }
-
-  .glowB {
-    animation: drift 22s ease-in-out infinite alternate-reverse;
-  }
-}
-
-@keyframes drift {
-  to {
-    transform: translate(-60px, 40px) scale(1.12);
-  }
 }
 
 .grid {
   display: grid;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(20px, 2.4vw, 32px) clamp(24px, 4vw, 64px);
 }
 
-.copy h1 {
-  font-size: clamp(32px, 3.6vw, 46px);
-  line-height: 1.04;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  max-width: 13em;
+.headline {
+  grid-column: 1 / -1;
+  font-size: clamp(46px, 7vw, 92px);
+  line-height: 0.92;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  max-width: 15ch;
 }
 
 .lead {
-  margin-top: 22px;
   max-width: 34rem;
-  font-size: clamp(18px, 1.6vw, 20px);
-  line-height: 1.55;
+  font-size: clamp(19px, 1.7vw, 22px);
+  line-height: 1.45;
   color: var(--ink-2);
-}
-
-.actions {
-  display: grid;
-  gap: 10px;
-  margin-top: 32px;
-}
-
-@media (min-width: 640px) {
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
 }
 
 .status {
   display: flex;
-  gap: 12px;
-  margin-top: 28px;
-  max-width: 36rem;
-  font-size: 15px;
-  color: var(--ink-2);
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.base {
+  font-weight: 400;
+  color: var(--ink-3);
 }
 
 .dot {
   flex: none;
   width: 10px;
   height: 10px;
-  margin-top: 7px;
   border-radius: 50%;
   background: var(--ok);
+  transform: translateY(-1px);
   box-shadow: 0 0 0 4px var(--ok-soft);
 }
 
-.time {
-  display: block;
-  color: var(--ink-3);
-  font-variant-numeric: tabular-nums;
-}
-
-.clients {
+/* The check-in desk: one heavy black sign, the CV beneath it. */
+.actions {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 28px;
-  margin-top: clamp(56px, 8vw, 88px);
-  padding-top: 28px;
-  padding-bottom: 28px;
-  border-top: 1px solid var(--line);
+  flex-direction: column;
+  gap: 12px;
+  width: min(100%, 360px);
 }
 
-.clients p {
-  font-size: 14px;
-  color: var(--ink-3);
+.boardWrap {
+  padding-top: clamp(24px, 3vw, 36px);
 }
 
-.marquee {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.track {
-  list-style: none;
-  display: flex;
-  flex: none;
-  gap: 40px;
-  padding-right: 40px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .track {
-    animation: marquee 32s linear infinite;
-  }
-
-  .marquee:hover .track {
-    animation-play-state: paused;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee {
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  .track {
-    flex-wrap: wrap;
-    gap: 8px 28px;
-  }
-
-  .track[aria-hidden='true'] {
-    display: none;
-  }
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.clients li {
-  white-space: nowrap;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--ink-3);
-}
-
-@media (min-width: 960px) {
+@media (max-width: 859px) {
   .grid {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 56px;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions :global(.ticket-lg .ticket-main) {
+    font-size: 24px;
   }
 }

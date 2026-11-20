@@ -54,10 +54,7 @@ export const ui = {
       en: 'Open to projects, remote contracts and full\u2011time roles.',
       id: 'Terbuka untuk proyek, kontrak remote, dan posisi full\u2011time.',
     },
-    showcase: { en: 'Recent work', id: 'Karya terbaru' },
-    slide: { en: 'Show', id: 'Tampilkan' },
-    localTime: { en: 'Gresik, Indonesia. Local time', id: 'Gresik, Indonesia. Waktu setempat' },
-    shippedFor: { en: 'Shipped for', id: 'Pernah dikerjakan untuk' },
+    base: { en: 'Based in Gresik, Indonesia. UTC+7.', id: 'Berbasis di Gresik, Indonesia. UTC+7.' },
   },
   panel: {
     product: 'PI Smart',
@@ -255,7 +252,33 @@ export const ui = {
   },
 };
 
-export const clients = ['PT Pupuk Indonesia', 'JLOG', 'Tergar Indonesia', 'Universitas Airlangga', 'Private MD Labs', 'Agendakota', 'Build With Angga'];
+export const board = {
+  title: { en: 'Departures', id: 'Keberangkatan' },
+  cols: {
+    since: { en: 'Since', id: 'Sejak' },
+    flight: { en: 'Flight', id: 'Kode' },
+    dest: { en: 'Destination', id: 'Tujuan' },
+    status: { en: 'Status', id: 'Status' },
+  },
+  status: {
+    live: { en: 'LIVE', id: 'AKTIF' },
+    landed: { en: 'LANDED', id: 'SELESAI' },
+    boarding: { en: 'BOARDING', id: 'BOARDING' },
+  },
+  statusLong: {
+    live: { en: 'running now', id: 'berjalan sekarang' },
+    landed: { en: 'completed', id: 'selesai' },
+    boarding: { en: 'boarding now, your project or role comes next', id: 'boarding sekarang, proyek atau posisi Anda berikutnya' },
+  },
+  // Flight codes are labels for the board, not real identifiers.
+  rows: [
+    { since: '2022', flight: 'PIS-22', dest: 'PUPUK INDONESIA', role: { en: 'Full stack developer, PI Smart', id: 'Full stack developer, PI Smart' }, status: 'live', href: '#work-pi-smart' },
+    { since: '2025', flight: 'JLG-25', dest: 'JLOG SURABAYA', role: { en: 'Digitalization Lead', id: 'Digitalization Lead' }, status: 'live', href: '#work-jlog' },
+    { since: '2026', flight: 'TGR-26', dest: 'TERGAR INDONESIA', role: { en: 'Webmaster', id: 'Webmaster' }, status: 'live', href: '#work-tergar-indonesia' },
+    { since: '2025', flight: 'PMD-25', dest: 'PRIVATE MD LABS', role: { en: 'Remote contract, USA', id: 'Kontrak remote, AS' }, status: 'landed', href: '#work-private-md-labs' },
+    { since: '2026', flight: 'AKH-01', dest: { en: 'YOUR TEAM', id: 'TIM ANDA' }, role: { en: 'Your project or role', id: 'Proyek atau posisi Anda' }, status: 'boarding', href: '#contact', next: true },
+  ],
+};
 
 // `shot` is a full-page capture of the live site; it scrolls inside a browser frame.
 // `tint` names the tile colour (see Work.module.css).
