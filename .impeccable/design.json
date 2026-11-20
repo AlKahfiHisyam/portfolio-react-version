@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-20T04:36:23.251211+00:00",
+  "title": "Design System: Al-Kahfi Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "concourse": {
+        "role": "neutral",
+        "displayName": "Concourse",
+        "canonical": "#ebe8e1",
+        "tonalRamp": [
+          "#2b2821",
+          "#4e4839",
+          "#72674f",
+          "#978865",
+          "#ada289",
+          "#c3bdad",
+          "#dbd7cf",
+          "#f4f3f1"
+        ]
+      },
+      "concourse-shade": {
+        "role": "neutral",
+        "displayName": "Concourse Shade",
+        "canonical": "#e1ddd4",
+        "tonalRamp": [
+          "#2b2822",
+          "#4d473a",
+          "#706651",
+          "#948667",
+          "#aba18b",
+          "#c2bcae",
+          "#dad7d0",
+          "#f4f3f1"
+        ]
+      },
+      "counter-white": {
+        "role": "neutral",
+        "displayName": "Counter White",
+        "canonical": "#f8f6f1",
+        "tonalRamp": [
+          "#2f2a1e",
+          "#554b32",
+          "#7d6d44",
+          "#a79054",
+          "#b9a87d",
+          "#cbc0a5",
+          "#dfd9cb",
+          "#f5f3f0"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#141413",
+        "tonalRamp": [
+          "#272726",
+          "#454542",
+          "#63635e",
+          "#81817a",
+          "#9d9d99",
+          "#b9b9b7",
+          "#d6d6d4",
+          "#f2f2f2"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#3b3934",
+        "tonalRamp": [
+          "#282725",
+          "#474540",
+          "#66635b",
+          "#868176",
+          "#a19d95",
+          "#bcbab4",
+          "#d7d6d3",
+          "#f3f2f2"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink Tertiary",
+        "canonical": "#59564f",
+        "tonalRamp": [
+          "#282725",
+          "#474540",
+          "#66635b",
+          "#858176",
+          "#a09d95",
+          "#bbb9b5",
+          "#d7d6d3",
+          "#f3f2f2"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#cbc6bb",
+        "tonalRamp": [
+          "#2a2823",
+          "#4a463c",
+          "#6c6555",
+          "#8e846d",
+          "#a79f8f",
+          "#c0bbb0",
+          "#d9d7d1",
+          "#f3f3f1"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field Grey",
+        "canonical": "#77726a",
+        "tonalRamp": [
+          "#282725",
+          "#464440",
+          "#66625c",
+          "#857f76",
+          "#a09c96",
+          "#bbb9b5",
+          "#d7d5d3",
+          "#f3f2f2"
+        ]
+      },
+      "sign-yellow": {
+        "role": "primary",
+        "displayName": "Sign Yellow",
+        "canonical": "#ffc629",
+        "tonalRamp": [
+          "#40320c",
+          "#785c0e",
+          "#b7890b",
+          "#fbb801",
+          "#f5c540",
+          "#f1d37f",
+          "#f2e3b8",
+          "#faf6eb"
+        ]
+      },
+      "sign-yellow-hover": {
+        "role": "primary",
+        "displayName": "Sign Yellow Hover",
+        "canonical": "#ffd35c",
+        "tonalRamp": [
+          "#40320c",
+          "#785c0e",
+          "#b7880b",
+          "#fbb701",
+          "#f5c440",
+          "#f1d27f",
+          "#f2e3b8",
+          "#faf6eb"
+        ]
+      },
+      "board-black": {
+        "role": "primary",
+        "displayName": "Board Black",
+        "canonical": "#0e0f11",
+        "tonalRamp": [
+          "#242529",
+          "#3e4249",
+          "#585e69",
+          "#727a8a",
+          "#9298a4",
+          "#b2b6bd",
+          "#d2d4d8",
+          "#f2f2f3"
+        ]
+      },
+      "flap-charcoal": {
+        "role": "primary",
+        "displayName": "Flap Charcoal",
+        "canonical": "#1e2024",
+        "tonalRamp": [
+          "#242529",
+          "#3f4248",
+          "#595e68",
+          "#727a89",
+          "#9398a3",
+          "#b3b6bd",
+          "#d2d4d8",
+          "#f2f2f3"
+        ]
+      },
+      "flap-ink": {
+        "role": "neutral",
+        "displayName": "Flap Ink",
+        "canonical": "#f3f0e7",
+        "tonalRamp": [
+          "#2f2b1e",
+          "#554c32",
+          "#7d6f44",
+          "#a79254",
+          "#b9aa7d",
+          "#cbc1a5",
+          "#dfdacb",
+          "#f5f4f0"
+        ]
+      },
+      "flap-dim": {
+        "role": "neutral",
+        "displayName": "Flap Dim",
+        "canonical": "#8d8a83",
+        "tonalRamp": [
+          "#272725",
+          "#464441",
+          "#64625d",
+          "#838078",
+          "#9f9c97",
+          "#bab9b6",
+          "#d6d6d4",
+          "#f3f2f2"
+        ]
+      },
+      "departure-green": {
+        "role": "tertiary",
+        "displayName": "Departure Green",
+        "canonical": "#3ddc75",
+        "tonalRamp": [
+          "#143821",
+          "#1f6838",
+          "#259c4f",
+          "#27d464",
+          "#5cda88",
+          "#90dfac",
+          "#c1e9cf",
+          "#edf8f1"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Sign Wash",
+        "canonical": "#fff0c4",
+        "tonalRamp": [
+          "#40330c",
+          "#785d0e",
+          "#b78b0b",
+          "#fbbb01",
+          "#f5c740",
+          "#f1d47f",
+          "#f2e3b8",
+          "#faf6eb"
+        ]
+      },
+      "whatsapp": {
+        "role": "tertiary",
+        "displayName": "WhatsApp Green",
+        "canonical": "#167c46",
+        "tonalRamp": [
+          "#143925",
+          "#1e6841",
+          "#249d5d",
+          "#26d579",
+          "#5cda97",
+          "#90e0b6",
+          "#c1ead4",
+          "#edf8f2"
+        ]
+      },
+      "whatsapp-hover": {
+        "role": "tertiary",
+        "displayName": "WhatsApp Green Hover",
+        "canonical": "#12693b",
+        "tonalRamp": [
+          "#143925",
+          "#1e6941",
+          "#249d5d",
+          "#25d679",
+          "#5bdb97",
+          "#90e0b6",
+          "#c0ead4",
+          "#edf8f2"
+        ]
+      },
+      "ok": {
+        "role": "tertiary",
+        "displayName": "Ok Green",
+        "canonical": "#157a3c",
+        "tonalRamp": [
+          "#143922",
+          "#1e693b",
+          "#249d53",
+          "#25d66a",
+          "#5bdb8c",
+          "#90e0af",
+          "#c0ead0",
+          "#edf8f1"
+        ]
+      },
+      "ok-soft": {
+        "role": "tertiary",
+        "displayName": "Ok Wash",
+        "canonical": "#dcefe1",
+        "tonalRamp": [
+          "#1c3022",
+          "#30573a",
+          "#418151",
+          "#4fac68",
+          "#79bd8b",
+          "#a3cdae",
+          "#cae0d0",
+          "#eff5f1"
+        ]
+      },
+      "warn": {
+        "role": "tertiary",
+        "displayName": "Warn Amber",
+        "canonical": "#8a5300",
+        "tonalRamp": [
+          "#402c0c",
+          "#784e0e",
+          "#b7720b",
+          "#fb9701",
+          "#f5ad40",
+          "#f1c47f",
+          "#f2dbb8",
+          "#faf4eb"
+        ]
+      },
+      "warn-soft": {
+        "role": "tertiary",
+        "displayName": "Warn Wash",
+        "canonical": "#fbeccb",
+        "tonalRamp": [
+          "#3d2f10",
+          "#715416",
+          "#aa7c17",
+          "#e9a613",
+          "#e8b84d",
+          "#e9ca87",
+          "#eedfbc",
+          "#f9f5ec"
+        ]
+      },
+      "night-concourse": {
+        "role": "neutral",
+        "displayName": "Night Concourse",
+        "canonical": "#141517",
+        "tonalRamp": [
+          "#242628",
+          "#404247",
+          "#5b5f67",
+          "#757b86",
+          "#9599a1",
+          "#b4b7bc",
+          "#d3d4d7",
+          "#f2f2f3"
+        ]
+      },
+      "night-concourse-shade": {
+        "role": "neutral",
+        "displayName": "Night Concourse Shade",
+        "canonical": "#1a1b1e",
+        "tonalRamp": [
+          "#242528",
+          "#404147",
+          "#5a5d67",
+          "#757987",
+          "#9498a1",
+          "#b4b6bc",
+          "#d3d4d7",
+          "#f2f2f3"
+        ]
+      },
+      "night-counter": {
+        "role": "neutral",
+        "displayName": "Night Counter White",
+        "canonical": "#212226",
+        "tonalRamp": [
+          "#242528",
+          "#404147",
+          "#5a5d67",
+          "#757886",
+          "#9497a1",
+          "#b4b6bc",
+          "#d3d4d7",
+          "#f2f2f3"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#f1eee6",
+        "tonalRamp": [
+          "#2e2a1f",
+          "#524a34",
+          "#796c48",
+          "#a18e5a",
+          "#b4a681",
+          "#c8bfa8",
+          "#ddd9cd",
+          "#f4f3f0"
+        ]
+      },
+      "night-ink-2": {
+        "role": "neutral",
+        "displayName": "Night Ink Secondary",
+        "canonical": "#c6c2b8",
+        "tonalRamp": [
+          "#292723",
+          "#49463e",
+          "#6a6557",
+          "#8b8470",
+          "#a59f91",
+          "#bebbb2",
+          "#d8d6d2",
+          "#f3f3f1"
+        ]
+      },
+      "night-ink-3": {
+        "role": "neutral",
+        "displayName": "Night Ink Tertiary",
+        "canonical": "#a29e94",
+        "tonalRamp": [
+          "#282724",
+          "#474540",
+          "#67635b",
+          "#868175",
+          "#a19e94",
+          "#bcbab4",
+          "#d7d6d3",
+          "#f3f2f2"
+        ]
+      },
+      "night-line": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "#36373c",
+        "tonalRamp": [
+          "#252528",
+          "#414246",
+          "#5c5e65",
+          "#777984",
+          "#9698a0",
+          "#b5b6bb",
+          "#d4d4d7",
+          "#f2f2f3"
+        ]
+      },
+      "night-field": {
+        "role": "neutral",
+        "displayName": "Night Field Grey",
+        "canonical": "#85827a",
+        "tonalRamp": [
+          "#272725",
+          "#464441",
+          "#64625d",
+          "#838078",
+          "#9f9d97",
+          "#bab9b6",
+          "#d6d6d4",
+          "#f3f2f2"
+        ]
+      },
+      "night-board": {
+        "role": "primary",
+        "displayName": "Night Board Black",
+        "canonical": "#0a0a0b",
+        "tonalRamp": [
+          "#252527",
+          "#414146",
+          "#5c5c65",
+          "#787884",
+          "#97979f",
+          "#b5b5bb",
+          "#d4d4d6",
+          "#f2f2f3"
+        ]
+      },
+      "night-flap": {
+        "role": "primary",
+        "displayName": "Night Flap Charcoal",
+        "canonical": "#1b1d20",
+        "tonalRamp": [
+          "#242628",
+          "#3f4248",
+          "#595f68",
+          "#737c88",
+          "#9399a2",
+          "#b3b7bd",
+          "#d3d5d8",
+          "#f2f2f3"
+        ]
+      },
+      "night-accent-soft": {
+        "role": "primary",
+        "displayName": "Night Sign Wash",
+        "canonical": "#2e2716",
+        "tonalRamp": [
+          "#2f2a1d",
+          "#564b31",
+          "#7f6d42",
+          "#aa9052",
+          "#bba87b",
+          "#ccc0a4",
+          "#dfd9cb",
+          "#f5f3f0"
+        ]
+      },
+      "night-ok": {
+        "role": "tertiary",
+        "displayName": "Night Ok Green",
+        "canonical": "#4ade80",
+        "tonalRamp": [
+          "#143821",
+          "#1f6839",
+          "#259c50",
+          "#27d466",
+          "#5cd98a",
+          "#91dfad",
+          "#c1e9d0",
+          "#edf7f1"
+        ]
+      },
+      "night-ok-soft": {
+        "role": "tertiary",
+        "displayName": "Night Ok Wash",
+        "canonical": "#12291a",
+        "tonalRamp": [
+          "#1c3023",
+          "#2f583d",
+          "#3f8256",
+          "#4dae6f",
+          "#78be90",
+          "#a2ceb1",
+          "#cae1d2",
+          "#eff5f1"
+        ]
+      },
+      "night-warn": {
+        "role": "tertiary",
+        "displayName": "Night Warn Amber",
+        "canonical": "#f0b660",
+        "tonalRamp": [
+          "#3c2a11",
+          "#6f4c17",
+          "#a86e19",
+          "#e59216",
+          "#e6a950",
+          "#e7c189",
+          "#eddabd",
+          "#f9f3ec"
+        ]
+      },
+      "night-warn-soft": {
+        "role": "tertiary",
+        "displayName": "Night Warn Wash",
+        "canonical": "#2a2010",
+        "tonalRamp": [
+          "#32291b",
+          "#5b492c",
+          "#87693a",
+          "#b68b46",
+          "#c3a472",
+          "#d1be9e",
+          "#e2d8c8",
+          "#f6f3ef"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only, max 15ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles, each preceded by the yellow arrow plate."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Gate names, counter headings, process steps."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose and leads; 17px under 720px; tabular numerals."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked labels: board columns, pass fields, status chips."
+      },
+      "flap": {
+        "displayName": "Flap",
+        "purpose": "Characters inside split-flap cells, sized from the board's cell unit --u."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-sm",
+        "value": "0 1px 2px rgb(20 20 19 / 0.08)",
+        "purpose": "Testimonial quotes."
+      },
+      {
+        "name": "shadow-md",
+        "value": "0 2px 4px rgb(20 20 19 / 0.06), 0 12px 24px -10px rgb(20 20 19 / 0.22)",
+        "purpose": "Raised app-like surfaces."
+      },
+      {
+        "name": "shadow-lg",
+        "value": "0 4px 8px rgb(20 20 19 / 0.08), 0 28px 48px -18px rgb(20 20 19 / 0.35)",
+        "purpose": "Departure board and boarding pass: physical objects on the concourse."
+      },
+      {
+        "name": "board-inset",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 0.06), var(--shadow-lg)",
+        "purpose": "Departure board top highlight."
+      },
+      {
+        "name": "focus-halo",
+        "value": "outline: 3px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--sign)",
+        "purpose": "Global :focus-visible."
+      },
+      {
+        "name": "night-shadow-lg",
+        "value": "0 4px 8px rgb(0 0 0 / 0.3), 0 28px 48px -18px rgb(0 0 0 / 0.7)",
+        "purpose": "shadow-lg in the night theme."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The one easing for every transition and the flap."
+      },
+      {
+        "name": "flap-tick",
+        "value": "55ms",
+        "purpose": "Interval between random glyphs while a split-flap run spins; cells settle left to right."
+      },
+      {
+        "name": "flap-flip",
+        "value": "0.11s scaleY(0.1) to 1, brightness 1.8 to 1",
+        "purpose": "Each landed character's flip."
+      },
+      {
+        "name": "board-call",
+        "value": "1.1s steps(2, jump-none) x4, 1.6s delay",
+        "purpose": "BOARDING blink on the NEXT: YOUR TEAM row."
+      },
+      {
+        "name": "hover",
+        "value": "0.18s to 0.3s",
+        "purpose": "Color and arrow-nudge transitions."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 0 and translateY(20px) to rest, 0.7s",
+        "purpose": "Scroll reveal, only with JS and no reduced-motion preference."
+      },
+      {
+        "name": "gate-scroll",
+        "value": "object-position 7s cubic-bezier(0.45, 0, 0.55, 1)",
+        "purpose": "Full-page capture scrolls through on gate hover."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "480px"
+      },
+      {
+        "name": "pass",
+        "value": "560px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "swipe",
+        "value": "720px"
+      },
+      {
+        "name": "md",
+        "value": "860px"
+      },
+      {
+        "name": "lg",
+        "value": "960px"
+      },
+      {
+        "name": "nav",
+        "value": "1000px"
+      },
+      {
+        "name": "board-narrow",
+        "value": "620px (container)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Sign Button",
+      "kind": "button",
+      "refersTo": "button-sign",
+      "description": "Yellow sign panel for the primary action.",
+      "html": "<button class=\"ds-btn ds-btn-sign\">Check in <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M5 12h13M12 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border-radius:2px;border:2px solid transparent;font-family:Barlow,system-ui,sans-serif;font-size:17px;font-weight:700;cursor:pointer;transition:background-color .18s,border-color .18s,color .18s,transform .15s cubic-bezier(.16,1,.3,1)}.ds-btn svg{width:20px;height:20px}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid #141413;outline-offset:3px;box-shadow:0 0 0 6px #ffc629}.ds-btn-sign{background:#ffc629;color:#141413}.ds-btn-sign:hover{background:#ffd35c}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Black sign with yellow type by day (yellow with black at night).",
+      "html": "<button class=\"ds-btn-primary\">Start a project</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:2px;border:2px solid transparent;background:#141413;color:#ffc629;font-family:Barlow,system-ui,sans-serif;font-size:17px;font-weight:700;cursor:pointer;transition:background-color .18s}.ds-btn-primary:hover{background:#34332f}.ds-btn-primary:focus-visible{outline:3px solid #141413;outline-offset:3px;box-shadow:0 0 0 6px #ffc629}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined sign; fills ink on hover.",
+      "html": "<button class=\"ds-btn-secondary\">Download CV</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:2px;border:2px solid #141413;background:transparent;color:#141413;font-family:Barlow,system-ui,sans-serif;font-size:17px;font-weight:700;cursor:pointer;transition:background-color .18s,color .18s}.ds-btn-secondary:hover{background:#141413;color:#ebe8e1}.ds-btn-secondary:focus-visible{outline:3px solid #141413;outline-offset:3px;box-shadow:0 0 0 6px #ffc629}"
+    },
+    {
+      "name": "Header Sign",
+      "kind": "nav",
+      "refersTo": "header-sign",
+      "description": "Overhead wayfinding strip; stays yellow at night.",
+      "html": "<nav class=\"ds-nav\"><strong>Al-Kahfi</strong><a href=\"#\">Work <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.75\"><path d=\"M5 12h13M12 5l7 7-7 7\"/></svg></a><a href=\"#\">About</a><span class=\"ds-lang\"><button aria-pressed=\"true\">EN</button><button aria-pressed=\"false\">ID</button></span></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:4px;height:64px;padding:0 20px;background:#ffc629;color:#141413;border-bottom:2px solid #141413;font-family:Barlow,system-ui,sans-serif}.ds-nav strong{font-family:'Barlow Semi Condensed',Barlow,sans-serif;font-size:21px;font-weight:800;margin-right:auto}.ds-nav a{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 12px;font-size:17px;font-weight:600;color:inherit;text-decoration:none}.ds-nav a svg{width:16px;height:16px}.ds-nav a:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px}.ds-nav a:focus-visible{outline:3px solid #141413;outline-offset:3px}.ds-lang{display:flex;border:2px solid #141413;border-radius:2px;margin-left:8px}.ds-lang button{min-width:44px;min-height:40px;border:0;background:none;font:700 14px Barlow,sans-serif;letter-spacing:.04em;color:#141413;cursor:pointer}.ds-lang button[aria-pressed=true]{background:#141413;color:#ffc629}.ds-lang button[aria-pressed=false]:hover{background:#ffd35c}"
+    },
+    {
+      "name": "Departure Board Row",
+      "kind": "custom",
+      "refersTo": "departure-board",
+      "description": "Black board with split-flap cells and a hinge line; LIVE in departure green.",
+      "html": "<div class=\"ds-board\"><div class=\"ds-row\"><span class=\"ds-flaps\"><i>2</i><i>0</i><i>2</i><i>4</i></span><span class=\"ds-flaps\"><i>P</i><i>I</i><i>S</i></span><span class=\"ds-flaps ds-live\"><i>L</i><i>I</i><i>V</i><i>E</i></span></div></div>",
+      "css": ".ds-board{background:#0e0f11;color:#f3f0e7;padding:20px;border-radius:4px;border:1px solid #2b2d31;box-shadow:inset 0 1px 0 rgb(255 255 255/.06),0 4px 8px rgb(20 20 19/.08),0 28px 48px -18px rgb(20 20 19/.35)}.ds-row{display:flex;gap:28px;padding:4px 0;transition:background-color .2s}.ds-row:hover{background:rgb(255 255 255/.05)}.ds-flaps{display:flex;gap:3px}.ds-flaps i{position:relative;display:grid;place-items:center;width:28px;height:42px;border-radius:2px;background:linear-gradient(#25272b 0 50%,#1e2024 50%);font:normal 700 30px/1 'Barlow Semi Condensed',Barlow,sans-serif;overflow:hidden}.ds-flaps i::after{content:'';position:absolute;inset:50% 0 auto;height:1px;background:#050506}.ds-live{color:#3ddc75}"
+    },
+    {
+      "name": "Gate Card",
+      "kind": "card",
+      "refersTo": "gate-sign-bar",
+      "description": "Project as a gate: black sign bar, yellow gate plate, flat 2px-ruled body.",
+      "html": "<a class=\"ds-gate\" href=\"#\"><div class=\"ds-gate-bar\"><span class=\"ds-gate-no\">A1</span><span><b>PI Smart</b><small>Internal platform</small></span></div><div class=\"ds-gate-body\"><span class=\"ds-chip\">Live</span></div></a>",
+      "css": ".ds-gate{display:flex;flex-direction:column;background:#f8f6f1;color:#141413;border:2px solid #141413;text-decoration:none;font-family:Barlow,system-ui,sans-serif}.ds-gate:focus-visible{outline:3px solid #141413;outline-offset:3px;box-shadow:0 0 0 6px #ffc629}.ds-gate-bar{display:flex;align-items:center;gap:16px;min-height:76px;background:#141413;color:#f3f0e7}.ds-gate-no{align-self:stretch;display:grid;place-items:center;min-width:76px;background:#ffc629;color:#141413;font:800 30px 'Barlow Semi Condensed',Barlow,sans-serif}.ds-gate-bar b{display:block;font-size:26px;line-height:1.05;letter-spacing:-.01em}.ds-gate-bar small{font-size:15px;color:#bdb9af}.ds-gate:hover .ds-gate-bar b{text-decoration:underline}.ds-gate-body{padding:14px 18px 16px}.ds-chip{display:inline-flex;padding:5px 9px;background:#141413;color:#3ddc75;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}"
+    },
+    {
+      "name": "Boarding Pass Stub",
+      "kind": "custom",
+      "refersTo": "boarding-pass-stub",
+      "description": "Yellow perforated stub with a CSS barcode; downloads the CV.",
+      "html": "<a class=\"ds-stub\" href=\"#\"><span class=\"ds-barcode\"></span><span>Download CV</span></a>",
+      "css": ".ds-stub{display:flex;flex-direction:column;gap:16px;width:132px;padding:18px 16px;background:#ffc629;color:#141413;border-left:2px dashed #141413;text-decoration:none;font:800 20px/1.05 'Barlow Semi Condensed',Barlow,sans-serif;transition:background-color .2s}.ds-stub:hover{background:#ffd35c}.ds-stub:focus-visible{outline:3px solid #141413;outline-offset:-6px}.ds-barcode{min-height:120px;background:repeating-linear-gradient(90deg,#141413 0 3px,transparent 3px 5px,#141413 5px 6px,transparent 6px 9px,#141413 9px 13px,transparent 13px 15px)}"
+    },
+    {
+      "name": "Check-in Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Concourse-filled field; focus adds a yellow halo.",
+      "html": "<label class=\"ds-field\"><span>Name</span><input placeholder=\"Your name\"></label>",
+      "css": ".ds-field{display:grid;gap:6px;font-family:Barlow,system-ui,sans-serif}.ds-field span{font-size:15px;font-weight:700;color:#141413}.ds-field input{min-height:50px;padding:12px 14px;border:2px solid #77726a;border-radius:2px;background:#ebe8e1;color:#141413;font:inherit;font-size:17px;transition:border-color .2s}.ds-field input:hover{border-color:#3b3934}.ds-field input:focus-visible{border-color:#141413;outline:0;box-shadow:0 0 0 4px #ffc629}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Papan Keberangkatan",
+    "overview": "The site is a daytime airport terminal. Warm concrete ground carries two materials that do all the talking: yellow wayfinding signs with black type for navigation and every primary action, and matte black split-flap boards for anything that is scheduled, measured or live. Projects are departures, sections are signed directions, the about page is a boarding pass and the contact form is a check-in desk. The visitor should be able to find the yellow action from anywhere, the way a traveller finds the exit sign.\n\nDensity is terminal-like: big, heavy condensed headings, square sign panels, catalogue grids that share their rules with no gutters, and short labelled rows. Nothing is a soft card. Depth comes from the boards and the boarding pass sitting on the concourse, not from floating surfaces.\n\nAt night the concourse goes dark but the signs and boards do not change: the header stays yellow, the boards stay black.",
+    "keyCharacteristics": [
+      "Sign yellow (#ffc629) with black type is the only action color; departure green is reserved for LIVE and NOW.",
+      "Barlow throughout, Barlow Semi Condensed for display; tabular numerals on every number.",
+      "Square corners (2px and 4px only); 2px black rules instead of shadows on most panels.",
+      "Split-flap motion: characters spin and land left to right; the EN/ID toggle re-flaps every board.",
+      "Every section title is a direction sign with a yellow arrow plate."
+    ],
+    "rules": [
+      {
+        "name": "The Wayfinding Rule",
+        "body": "Yellow means \"go here\". It marks navigation and the primary action of a section, always with black type, and is never used as decoration or body-text color on light ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Green Lamp Rule",
+        "body": "Departure green appears only for something that is live right now (LIVE, NOW, available) and only on black.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "`font-variant-numeric: tabular-nums` is set on body; every time, count, year and flight code aligns in columns.",
+        "section": "typography"
+      },
+      {
+        "name": "The Objects-Only Rule",
+        "body": "A shadow means a physical object resting on the concourse (board, ticket, floating button). Signs, gates, counters and forms are flat with a 2px rule.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use sign yellow with black type for navigation and the one primary action per section.",
+      "**Do** put anything scheduled, live or counted on a black board or chip, in tabular numerals.",
+      "**Do** keep corners at 2px or 4px and separate panels with 2px ink rules.",
+      "**Do** keep the header and boards identical in both themes; only the concourse changes at night.",
+      "**Do** give every flap animation a static, reduced-motion fallback."
+    ],
+    "donts": [
+      "**Don't** use departure green for anything that is not live right now, or on light ground.",
+      "**Don't** set white type on sign yellow.",
+      "**Don't** use soft rounded cards or floating shadows on signs, gates, counters or forms.",
+      "**Don't** add a second accent hue; yellow, black and the green lamp are the whole signal vocabulary."
+    ]
+  }
+}
