@@ -325,19 +325,8 @@ export const featuredProjects = [
     url: 'https://superapp.jlog.id/',
   },
   {
-    title: 'Private MD Labs',
-    kind: { en: 'Lab test booking, USA', id: 'Pemesanan tes lab, AS' },
-    summary: {
-      en: 'Patients across the United States pick a test, find a nearby lab and get results online. I worked on lab location data, search and geolocation, and accessible interfaces.',
-      id: 'Pasien di seluruh Amerika Serikat memilih tes, menemukan lab terdekat, dan menerima hasil secara online. Saya mengerjakan data lokasi lab, pencarian dan geolokasi, serta antarmuka yang aksesibel.',
-    },
-    role: { en: 'Full stack developer, remote, 2025', id: 'Full stack developer, remote, 2025' },
-    stack: ['Laravel', 'Vue', 'PostgreSQL'],
-    shot: '/assets/shots/privatemdlabs.webp',
-    tint: 'slate',
-    url: 'https://www.privatemdlabs.com/',
-  },  {
     title: 'Tergar Indonesia',
+    status: 'live',
     kind: { en: 'Foundation website, webmaster', id: 'Website yayasan, webmaster' },
     summary: {
       en: 'I run tergar.or.id: performance, security, SEO, online registration and event content, including Yongey Mingyur Rinpoche’s visit to Indonesia in November 2026.',
@@ -350,7 +339,21 @@ export const featuredProjects = [
     url: 'https://tergar.or.id/',
   },
   {
+    title: 'Private MD Labs',
+    status: 'landed',
+    kind: { en: 'Lab test booking, USA', id: 'Pemesanan tes lab, AS' },
+    summary: {
+      en: 'Patients across the United States pick a test, find a nearby lab and get results online. I worked on lab location data, search and geolocation, and accessible interfaces.',
+      id: 'Pasien di seluruh Amerika Serikat memilih tes, menemukan lab terdekat, dan menerima hasil secara online. Saya mengerjakan data lokasi lab, pencarian dan geolokasi, serta antarmuka yang aksesibel.',
+    },
+    role: { en: 'Full stack developer, remote, 2025', id: 'Full stack developer, remote, 2025' },
+    stack: ['Laravel', 'Vue', 'PostgreSQL'],
+    shot: '/assets/shots/privatemdlabs.webp',
+    tint: 'slate',
+    url: 'https://www.privatemdlabs.com/',
+  },  {
     title: 'Agendakota',
+    status: 'landed',
     kind: { en: 'Event management platform', id: 'Platform manajemen acara' },
     summary: {
       en: 'Organisers find vendors and venues, sell tickets and track sales from one dashboard. I built vendor and venue discovery features.',
