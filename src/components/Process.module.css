@@ -1,46 +1,167 @@
+/* The route: four stops on one line, the way a flight path is printed on a ticket. */
 .steps {
+  position: relative;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px 16px;
+  gap: 32px;
+  counter-reset: stop;
+}
+
+@media (min-width: 860px) {
+  .steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
 }
 
 .steps li {
   position: relative;
-  padding-top: 20px;
-  border-top: 2px solid var(--line);
+  padding-right: 28px;
+}
+
+/* The plane rests just short of the last stop; in motion it flies there from the first. */
+.steps .plane {
+  position: absolute;
+  top: 6px;
+  left: calc(75% - 44px);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.steps .plane::before {
+  display: none;
+}
+
+.plane svg {
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:global(.js) .steps li:not(.plane)::before {
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s var(--ease-out) calc(var(--i) * 0.35s);
+  }
+
+  html:global(.js) .steps .num {
+    transform: scale(0.4);
+    opacity: 0;
+    transition: transform 0.35s var(--ease-out) calc(var(--i) * 0.35s), opacity 0.2s calc(var(--i) * 0.35s);
+  }
+
+  html:global(.js) .steps .plane {
+    left: 0;
+    opacity: 0;
+    transition: left 1.6s cubic-bezier(0.45, 0, 0.2, 1) 0.15s, opacity 0.3s 0.15s;
+  }
+
+  html:global(.js) .flying li:not(.plane)::before {
+    transform: none;
+  }
+
+  html:global(.js) .flying .num {
+    transform: none;
+    opacity: 1;
+  }
+
+  html:global(.js) .flying .plane {
+    left: calc(75% - 44px);
+    opacity: 1;
+  }
+}
+
+/* The line runs through every stop and stops at the last one. */
+.steps li::before {
+  content: '';
+  position: absolute;
+  top: 21px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--rule);
+}
+
+.steps li:nth-last-child(2)::before {
+  right: auto;
+  width: 44px;
 }
 
 .num {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--bg-subtle);
-  border: 1px solid var(--line);
-  font-size: 14px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
+  width: 44px;
+  height: 44px;
+  background: var(--ink);
+  color: var(--sign);
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.steps li:nth-last-child(2) .num {
+  background: var(--sign);
+  color: #141413;
+  box-shadow: inset 0 0 0 3px var(--rule);
 }
 
 .steps h3 {
-  margin-top: 12px;
-  font-size: clamp(16px, 1.6vw, 19px);
-  line-height: 1.3;
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  margin-top: 22px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .steps p {
-  margin-top: 6px;
+  margin-top: 8px;
+  font-size: 17px;
   color: var(--ink-2);
-  font-size: clamp(14px, 1.4vw, 16px);
 }
 
-@media (min-width: 1024px) {
-  .steps {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
+@media (max-width: 859px) {
+  .steps li {
+    padding: 0 0 0 68px;
+  }
+
+  .steps li::before {
+    top: 0;
+    bottom: -32px;
+    left: 20px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+
+  .steps li:nth-last-child(2)::before,
+  .steps .plane {
+    display: none;
+  }
+
+  .num {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .steps h3 {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 859px) and (prefers-reduced-motion: no-preference) {
+  html:global(.js) .steps li:not(.plane)::before {
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+
+  html:global(.js) .flying li:not(.plane)::before {
+    transform: none;
   }
 }
