@@ -1,4 +1,4 @@
-import { Moon, Sun } from 'lucide-react';
+import { ArrowDown, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../i18n/LanguageContext';
 import { profile, ui, whatsappLink } from '../data/portfolio';
@@ -21,7 +21,10 @@ export const Header = () => {
 
         <nav className={styles.nav} aria-label={t(ui.nav.sections)}>
           {sections.map((id) => (
-            <a key={id} href={`#${id}`}>{t(ui.nav[id])}</a>
+            <a key={id} href={`#${id}`}>
+              <ArrowDown aria-hidden="true" />
+              {t(ui.nav[id])}
+            </a>
           ))}
         </nav>
 
@@ -51,7 +54,7 @@ export const Header = () => {
             href={whatsappLink(t(ui.hero.whatsappText))}
             target="_blank"
             rel="noopener noreferrer"
-            className={`btn btn-primary ${styles.cta}`}
+            className={`btn ${styles.cta}`}
           >
             <WhatsAppIcon />
             {t(ui.nav.cta)}
