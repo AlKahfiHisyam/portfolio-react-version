@@ -45,6 +45,7 @@ export const ui = {
     },
     primary: { en: 'Start a project', id: 'Mulai proyek' },
     whatsapp: { en: 'Chat on WhatsApp', id: 'Chat via WhatsApp' },
+    whatsappShort: { en: 'Chat', id: 'Chat' },
     whatsappText: {
       en: 'Hi Al-Kahfi, I found your portfolio and would like to talk about a project.',
       id: 'Halo Al-Kahfi, saya melihat portfolio Anda dan ingin diskusi tentang sebuah proyek.',

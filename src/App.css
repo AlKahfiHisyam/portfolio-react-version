@@ -326,6 +326,135 @@ textarea {
   font-size: 19px;
 }
 
+/* WhatsApp links are tickets: notched paper, a dashed perforation, a plane on the stub that takes off on hover. */
+.ticket {
+  --stub: 52px;
+  --notch: 7px;
+  display: inline-flex;
+  min-height: 52px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.ticket-paper {
+  display: flex;
+  width: 100%;
+  -webkit-mask:
+    radial-gradient(circle var(--notch) at calc(100% - var(--stub)) 0, #0000 96%, #000),
+    radial-gradient(circle var(--notch) at calc(100% - var(--stub)) 100%, #0000 96%, #000);
+  -webkit-mask-composite: source-in;
+  mask:
+    radial-gradient(circle var(--notch) at calc(100% - var(--stub)) 0, #0000 96%, #000),
+    radial-gradient(circle var(--notch) at calc(100% - var(--stub)) 100%, #0000 96%, #000);
+  mask-composite: intersect;
+  transition: transform 0.15s var(--ease-out);
+}
+
+.ticket:active .ticket-paper {
+  transform: translateY(1px);
+}
+
+.ticket-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color 0.18s;
+}
+
+.ticket-main svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.ticket-stub {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--stub);
+  background: var(--sign);
+  color: #141413;
+  border-left: 2px dashed rgb(20 20 19 / 0.5);
+  overflow: hidden;
+}
+
+.ticket-stub svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ticket:hover .ticket-stub svg,
+.ticket:focus-visible .ticket-stub svg {
+  animation: takeoff 0.9s var(--ease-out);
+}
+
+@keyframes takeoff {
+  40% {
+    transform: translate(24px, -24px) scale(0.6);
+    opacity: 0;
+  }
+  41% {
+    transform: translate(-24px, 24px) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.ticket-wa .ticket-main {
+  background: var(--wa);
+  color: #ffffff;
+}
+
+.ticket-wa:hover .ticket-main {
+  background: var(--wa-hover);
+}
+
+.ticket-ink .ticket-main {
+  background: #141413;
+  color: var(--sign);
+}
+
+.ticket-ink:hover .ticket-main {
+  background: #34332f;
+}
+
+:root[data-theme='dark'] .ticket-ink .ticket-main {
+  background: var(--sign);
+  color: #141413;
+}
+
+:root[data-theme='dark'] .ticket-ink .ticket-stub {
+  background: #f3f0e7;
+}
+
+.ticket-lg {
+  --stub: 76px;
+  --notch: 9px;
+  min-height: 76px;
+}
+
+.ticket-lg .ticket-main {
+  gap: 12px;
+  padding: 0 24px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.ticket-lg .ticket-main svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ticket-lg .ticket-stub svg {
+  width: 30px;
+  height: 30px;
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
